@@ -1,0 +1,10 @@
+
+COSAS PARA HACER EN HTML CSS Y JS
+
+1) NAVBAR 
+2) ACCORDION
+3) CARRUSSEL 
+4) TOOLTIPS
+5) hover (efectos)
+6) animaciones 
+7) hamburger menu 
