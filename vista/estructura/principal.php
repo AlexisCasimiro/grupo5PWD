@@ -1,4 +1,5 @@
 <?php
+$Titulo = "Grupo 5";
 include_once("header.php");
 
 ?>

@@ -3,14 +3,15 @@
 <html lang="en">
 
 <head>
+  <title><?php echo $Titulo;?></title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!--LINK BOOSTRAP -->
-  <link rel="stylesheet" href="../libs/bootstrap5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../libs/bootstrap5/css/bootstrap.min.css">
   
   <!--LINK ICONOS BOOTSTRAP  -->
-  <link rel="stylesheet" href="../libs/node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../../libs/node_modules/bootstrap-icons/font/bootstrap-icons.css">
   
   <!-- LINK CSS -->
   <link rel="stylesheet" type="text/css" href="../css/header.css">
@@ -18,10 +19,10 @@
   <link rel="stylesheet" type="text/css" href="../css/principal.css">
   
   <!--LINK JS - BOOTSTRAP-->
-  <script src="../libs/bootstrap5/js/bootstrap.min.js"></script>
+  <script src="../../libs/bootstrap5/js/bootstrap.min.js"></script>
 
     <!--LINK JS - JQUERY-->
-    <script src="../libs/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../../libs/node_modules/jquery/dist/jquery.min.js"></script>
 
 </head>
 

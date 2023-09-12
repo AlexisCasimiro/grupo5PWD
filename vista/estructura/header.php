@@ -3,6 +3,7 @@
 <html lang="en">
 
 <head>
+  <title><?php echo $Titulo; ?></title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
@@ -28,7 +29,7 @@
 <body>
   <nav class="navbar navbar-expand-lg bg-light p-2 fs-3">
     <div class="container-fluid">
-      <a class="navbar-brand" id="pagina-principal" href="principal.php">Grupo N°5</a>
+      <a class="navbar-brand" id="pagina-principal" href="../estructura/principal.php">Grupo N°5</a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -100,8 +101,8 @@
               <li><a class="dropdown-item" href="#">Ejercicio 1</a></li>
               <li><a class="dropdown-item" href="#">Ejercicio 2</a></li>
               <li><a class="dropdown-item" href="../tp4/verAutos.php">Ejercicio 3</a></li>
-              <li><a class="dropdown-item" href="../tp4/buscarAuto.php">Ejercicio 4</a></li>
-              <li><a class="dropdown-item" href="../tp4/listaPersonas.php">Ejercicio 3</a></li>
+              <li><a class="dropdown-item" href="../tp4/buscarAuto.php">Ej4 Buscar Auto</a></li>
+              <li><a class="dropdown-item" href="../tp4/listaPersonas.php">Ej3 Lista de Personas</a></li>
               <li><a class="dropdown-item" href="../tp4/nuevaPersona.php">Ejercicio 4</a></li>
               <li><a class="dropdown-item" href="../tp4/nuevoAuto.php">Ejercicio 5</a></li>
               <li><a class="dropdown-item" href="../tp4/cambioDuenio.php">Ejercicio 6</a></li>
