@@ -89,6 +89,25 @@
               <li><a class="dropdown-item" href="../tp3/ejercicio3.php">Ejercicio 3</a></li>
             </ul>
           </li>
+
+
+          <!--DROPDOWN TP4 -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              TP4
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Ejercicio 1</a></li>
+              <li><a class="dropdown-item" href="#">Ejercicio 2</a></li>
+              <li><a class="dropdown-item" href="../tp4/verAutos.php">Ejercicio 3</a></li>
+              <li><a class="dropdown-item" href="../tp4/buscarAuto.php">Ejercicio 4</a></li>
+              <li><a class="dropdown-item" href="../tp4/listaPersonas.php">Ejercicio 3</a></li>
+              <li><a class="dropdown-item" href="../tp4/nuevaPersona.php">Ejercicio 4</a></li>
+              <li><a class="dropdown-item" href="../tp4/nuevoAuto.php">Ejercicio 5</a></li>
+              <li><a class="dropdown-item" href="../tp4/cambioDuenio.php">Ejercicio 6</a></li>
+              <li><a class="dropdown-item" href="../tp4/buscarPersona.php">Ejercicio 7</a></li>
+            </ul>
+          </li>
         </ul>
       </div>
     </div>
