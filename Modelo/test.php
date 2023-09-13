@@ -2,6 +2,7 @@
 include_once("Auto.php");
 include_once("Persona.php");
 include_once("./conector/BaseDatos.php");
+include_once("../Control/tp4/AbmPersona.php");
 $objAuto=new Auto();
 
 //echo("Metedo Cargar un obj de la base de datos <br>");
@@ -76,7 +77,11 @@ $objPersona=new Persona();
 //echo("Listar");
 //$personas=Persona::listar("");
 //print_r($personas);
-
+$abmPrueba= new AbmPersona();
+$personas=$abmPrueba->buscar(null);
+foreach($personas as $unapersona){
+    echo $unapersona->getDni() ."|";
+}
 
 
 ?>

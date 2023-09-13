@@ -1,6 +1,10 @@
 <?php
+<<<<<<< HEAD
   include_once("../../configuracion.php");
 
+=======
+  include_once("../../configuracion.php")
+>>>>>>> 4081e1c30d8a8e7d00700d8852732a54c0e1b9cb
 ?>
 <!DOCTYPE html>
 <html lang="en">
