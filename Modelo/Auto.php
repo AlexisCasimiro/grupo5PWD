@@ -68,7 +68,12 @@ class Auto{
     }// fin 
 
 
-    // METODO CARGAR 
+    
+
+    // METODO CARGAR
+    /**
+     * @return boolean
+     */
     public function cargar(){
         $resp=false; 
        $base=new BaseDatos();
@@ -91,8 +96,13 @@ class Auto{
 
     }// fin function cargar
 
+
+
     
     // FUNCION INSERTAR 
+    /**
+     * @return boolean
+     */
     public function insertar(){
         $resp=false;
         $base=new BaseDatos();
@@ -115,7 +125,12 @@ class Auto{
 
     }// fin function insertar
     
+
+
     // FUNCION MODIFICAR 
+    /**
+     * @return boolean
+     */
     public function modificar(){
         $res=false;
         $base=new BaseDatos();
@@ -135,7 +150,12 @@ class Auto{
         return $res; 
     }// fin modificar
 
+
+
     // FUNCION ELIMINAR 
+    /**
+     * @return boolean
+     */
     public function eliminar(){
         $res=false; 
         $base=new BaseDatos();
@@ -156,6 +176,9 @@ class Auto{
 
 
     // FUNCION LISTAR
+    /**
+     * @return array
+     */
     public static function listar($parametro=""){
         $arreglo=array ();
         $base=new BaseDatos();

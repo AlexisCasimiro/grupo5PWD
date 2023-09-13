@@ -1,21 +1,24 @@
-$(document).ready(()=>{
-    $("#enviar").on("submit",function(patenteOk($("#patente").text())){
-        //declaracion de variables
-       // if (patenteOk($("#patente").text()) ){   
 
-        //this.submit();
-        //}
-        
+$(document).ready(function(){
+    $("#formPat").submit(function(event){
+        event.preventDefault();
+        if(comprobar()) this.submit(); 
     });
 });
+function comprobar(){
+    $('#patente').text(function(){
+        $ok = patenteOk(this.value);
+    });  
+    return $ok;
+}
 
 jQuery('#patente').on('keyup', function() {
     patenteOk(this.value);
-  });
-  
-  function patenteOk(texto) {
+});
+
+function patenteOk(texto) {
     var patente=$("#patente");
-    patente.css("border", "4px solid red");
+    patente.css("border", "5px solid red");
     var exito = false;
     var patNueva = /^[a-zA-Z][a-zA-Z][0-9][0-9][0-9][a-zA-Z][a-zA-Z]$/;
     var patVieja = /^[a-zA-Z][a-zA-Z][a-zA-Z][0-9][0-9][0-9]$/;
@@ -26,6 +29,4 @@ jQuery('#patente').on('keyup', function() {
    
     }
     return exito;
-    //return regex.test(texto);
   }
-  

@@ -5,7 +5,7 @@
         /**
      * Espera como parametro un arreglo asociativo donde las claves coinciden con los nombres de las variables instancias del objeto
      * @param array $param
-     * @return obj
+     * @return Auto
      */
     private function cargarObjeto($param){
         $obj = null;
@@ -18,20 +18,24 @@
         return $obj;
     }// fin cargarObjeto
 
+
+
+
     /**
      * Espera como parametro un arreglo asociativo donde las claves coinciden con los nombres de las variables instancias del objeto que son claves
      * @param array $param
-     * @return obj
+     * @return Auto
      */
     private function cargarObjetoConClave($param){
         $obj = null;
         
         if( isset($param['Patente']) ){
-            $obj = new Persona();
-            $obj->setear($param['Patente'], null,null,null,null,null);
+            $obj = new Auto();
+            $obj->setear($param['Patente'], null,null,null);
         }
         return $obj;
     }// fin function cargarObjetoConClave
+
 
 
     /**
@@ -47,9 +51,10 @@
     }// fin seteadoCamposClaves
 
 
-        /**
+    /**
      * METODO ALTA PERSONA
      * @param array $param
+     * @return boolean
      */
     public function alta($param){
         $resp = false;
@@ -61,6 +66,8 @@
         return $resp;
         
     } // fin function alta
+
+
 
     /**
      * METODO ELIMINAR PERSONA 
@@ -77,6 +84,7 @@
         } 
         return $resp;
     }// fin functio baja
+
 
 
     /**
@@ -96,10 +104,11 @@
     }// fin function modificacion
 
 
+
         /**
      * permite buscar un objeto
      * @param array $param
-     * @return boolean
+     * @return array
      */
     public function buscar($param){
         $where =" true ";
@@ -113,7 +122,7 @@
             if  (isset($param['DniDuenio']))
                  $where.=" and DniDuenio ='".$param['DniDuenio']."'";                  
         }// fin if <> null
-        $arreglo = Persona::listar($where);  
+        $arreglo = Auto::listar($where);  
         return $arreglo;
     }// fin function buscar
 

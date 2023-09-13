@@ -10,9 +10,9 @@ include_once("../estructura/header.php");
 ?>	
 <div>
     <h1>Buscar Auto por la Patente</h1>
-        <form action="accion/accionBuscarAuto.php" method="post" name="formBusAuto" id="formBusAuto">
+        <form action="accion/accionBuscarAuto.php" method="post" name="formPat" id="formPat">
         Ingrese la Patente: <input type="text" name="patente" id="patente">
-        <button type="submit" class="btn btn-success w-100" name="enviar" id="enviar">Buscar</button>
+        <button type="submit" class="btn btn-success w-10" name="enviar" id="enviar">Buscar</button>
     </form>
 
 </div>
