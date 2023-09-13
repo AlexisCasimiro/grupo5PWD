@@ -1,5 +1,5 @@
 <?php
-  include_once("../../configuracion.php")
+  include_once("../../../configuracion.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,14 +47,14 @@
               TP1
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="../tp1/ejercicio1.php">Ejercicio 1</a></li>
-              <li><a class="dropdown-item" href="../tp1/ejercicio2.php">Ejercicio 2</a></li>
-              <li><a class="dropdown-item" href="../tp1/ejercicio3.php">Ejercicio 3</a></li>
-              <li><a class="dropdown-item" href="../tp1/ejercicio4.php">Ejercicio 4</a></li>
-              <li><a class="dropdown-item" href="../tp1/ejercicio5.php">Ejercicio 5</a></li>
-              <li><a class="dropdown-item" href="../tp1/ejercicio6.php">Ejercicio 6</a></li>
-              <li><a class="dropdown-item" href="../tp1/ejercicio7.php">Ejercicio 7</a></li>
-              <li><a class="dropdown-item" href="../tp1/ejercicio8.php">Ejercicio 8</a></li>
+              <li><a class="dropdown-item" href="../../tp1/ejercicio1.php">Ejercicio 1</a></li>
+              <li><a class="dropdown-item" href="../../tp1/ejercicio2.php">Ejercicio 2</a></li>
+              <li><a class="dropdown-item" href="../../tp1/ejercicio3.php">Ejercicio 3</a></li>
+              <li><a class="dropdown-item" href="../../tp1/ejercicio4.php">Ejercicio 4</a></li>
+              <li><a class="dropdown-item" href="../../tp1/ejercicio5.php">Ejercicio 5</a></li>
+              <li><a class="dropdown-item" href="../../tp1/ejercicio6.php">Ejercicio 6</a></li>
+              <li><a class="dropdown-item" href="../../tp1/ejercicio7.php">Ejercicio 7</a></li>
+              <li><a class="dropdown-item" href="../../tp1/ejercicio8.php">Ejercicio 8</a></li>
             </ul>
           </li>
           <!--DROPDOWN TP2 -->
@@ -70,10 +70,10 @@
                     TP1
                 </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="../tp1/ejercicio1.php">ejercicio 1</a></li>
-                        <li><a class="dropdown-item" href="../tp1/ejercicio2.php">ejercicio 2</a></li>      
-                        <li><a class="dropdown-item" href="../tp1/ejercicio3.php">ejercicio 3</a></li>
-                        <li><a class="dropdown-item" href="../tp1/ejercicio4.php">ejercicio 4</a></li>
+                        <li><a class="dropdown-item" href="../../tp1/ejercicio1.php">ejercicio 1</a></li>
+                        <li><a class="dropdown-item" href="../../tp1/ejercicio2.php">ejercicio 2</a></li>      
+                        <li><a class="dropdown-item" href="../../tp1/ejercicio3.php">ejercicio 3</a></li>
+                        <li><a class="dropdown-item" href="../../tp1/ejercicio4.php">ejercicio 4</a></li>
 
                     </ul>
               </li>
@@ -87,9 +87,27 @@
               TP3
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="../tp3/ejercicio1.php">Ejercicio 1</a></li>
-              <li><a class="dropdown-item" href="../tp3/ejercicio2.php">Ejercicio 2</a></li>
-              <li><a class="dropdown-item" href="../tp3/ejercicio3.php">Ejercicio 3</a></li>
+              <li><a class="dropdown-item" href="../../tp3/ejercicio1.php">Ejercicio 1</a></li>
+              <li><a class="dropdown-item" href="../../tp3/ejercicio2.php">Ejercicio 2</a></li>
+              <li><a class="dropdown-item" href="../../tp3/ejercicio3.php">Ejercicio 3</a></li>
+            </ul>
+          </li>
+
+          <!--DROPDOWN TP4 -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              TP4
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Ejercicio 1</a></li>
+              <li><a class="dropdown-item" href="#">Ejercicio 2</a></li>
+              <li><a class="dropdown-item" href="../../tp4/verAutos.php">Ejercicio 3</a></li>
+              <li><a class="dropdown-item" href="../../tp4/buscarAuto.php">Ej4 Buscar Auto</a></li>
+              <li><a class="dropdown-item" href="../../tp4/listaPersonas.php">Ej3 Lista de Personas</a></li>
+              <li><a class="dropdown-item" href="../../tp4/nuevaPersona.php">Ejercicio 4</a></li>
+              <li><a class="dropdown-item" href="../../tp4/nuevoAuto.php">Ejercicio 5</a></li>
+              <li><a class="dropdown-item" href="../../tp4/cambioDuenio.php">Ejercicio 6</a></li>
+              <li><a class="dropdown-item" href="../../tp4/buscarPersona.php">Ejercicio 7</a></li>
             </ul>
           </li>
         </ul>
