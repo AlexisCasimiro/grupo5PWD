@@ -4,7 +4,7 @@ include_once("../../Control/tp4/AbmPersona.php")
 ?>
 
 <h1 style="text-align: center; color:dodgerblue;">Agregar un nuevo auto a la base de datos</h1>
-    <form class="row g-3 needs-validation" method="get" id="form-alta-auto" action="accionNuevoAuto.php" novalidate>
+    <form class="row g-3 needs-validation" method="get" id="form-alta-auto" action="accion/accionNuevoAuto.php" novalidate>
         <div class="col-md-2"></div>
         <div class="col-md-4">
             <label for="validationCustom01" class="form-label">Patente</label>
@@ -31,7 +31,7 @@ include_once("../../Control/tp4/AbmPersona.php")
         </div>
     </form>
     <hr style="height: 3px; color:green;">
-<h3 style="text-align: center; color:dodgerblue;">Datos de las personas cargadas en la base de datos</h1>
+<h3 style="text-align: center; color:dodgerblue;">Datos de las personas cargadas en la base de datos</h3>
 <?php
     $objAbmPersona=new AbmPersona;
     $arregloPersonas=$objAbmPersona->buscar(null);
@@ -41,6 +41,7 @@ include_once("../../Control/tp4/AbmPersona.php")
     }
     echo "<ul>";
 ?>
+    <p><a href="nuevaPersona.php" class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Agregar una Persona</a></p>
 <script src="../js/tp4Ej5.js"></script>
 
 <?php
