@@ -23,6 +23,7 @@ spl_autoload_register(function ($class_name){
         $_SESSION['ROOT'].'Modelo/',
         $_SESSION['ROOT'].'Modelo/conector/',
         $_SESSION['ROOT'].'Control/',
+        $_SESSION['ROOT'].'Control/tp4'
       //  $GLOBALS['ROOT'].'util/class/',
         );
     //print_object($directorys) ;

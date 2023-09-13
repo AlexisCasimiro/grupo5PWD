@@ -1,6 +1,4 @@
 <?php
-    include_once("../configuracion.php");
-
     class Persona{
         private $nombre;
         private $apellido; 
