@@ -172,7 +172,7 @@
         public static function listar($parametro=""){
             $arreglo=array();
             $base=new BaseDatos();
-            $sql="SELECT * FROM persona";
+            $sql="SELECT * FROM persona ";
             if($parametro!=""){
                 $sql.='WHERE '.$parametro;
             }
