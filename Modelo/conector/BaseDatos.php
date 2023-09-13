@@ -7,6 +7,8 @@ class BaseDatos extends PDO {
     private $user;
     private $pass;
   	private $debug;
+    private $error;
+    private $sql;
   	private $conec;
   	private $indice;
   	private $resultado;
@@ -116,6 +118,7 @@ class BaseDatos extends PDO {
         // se desea ejecutar un select
         if ( stristr($sql,"select")){
             $resp =  $this->EjecutarSelect($sql);
+            
         }
         return $resp;
    }

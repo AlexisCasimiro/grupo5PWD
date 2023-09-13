@@ -1,9 +1,5 @@
 <?php
   include_once("../../../configuracion.php");
-<<<<<<< HEAD
-
-=======
->>>>>>> 4081e1c30d8a8e7d00700d8852732a54c0e1b9cb
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -97,14 +93,8 @@
             </ul>
           </li>
 
-<<<<<<< HEAD
-
-                    <!--DROPDOWN TP4 -->
-                    <li class="nav-item dropdown">
-=======
           <!--DROPDOWN TP4 -->
           <li class="nav-item dropdown">
->>>>>>> 4081e1c30d8a8e7d00700d8852732a54c0e1b9cb
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               TP4
             </a>

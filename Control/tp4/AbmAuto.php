@@ -113,16 +113,17 @@
     public function buscar($param){
         $where =" true ";
         if ($param<>NULL){
-            if  (isset($param['Patente']))
-                $where.=" and Patente =".$param['Patente'];
+            if  (isset($param['patente']))
+            $where.=" and Patente = '".$param['patente']."'";
             if  (isset($param['Marca']))
-                 $where.=" and Marca ='".$param['Marca']."'";
+                 $where.=" and Marca = '".$param['Marca']."'";
             if  (isset($param['modelo']))
-                 $where.=" and Modelo ='".$param['Modelo']."'";
+                 $where.=" and Modelo = '".$param['Modelo']."'";
             if  (isset($param['DniDuenio']))
-                 $where.=" and DniDuenio ='".$param['DniDuenio']."'";                  
-        }// fin if <> null
-        $arreglo = Auto::listar($where);  
+                 $where.=" and DniDuenio '='".$param['DniDuenio']."'";                  
+            }// fin if <> null
+            
+            $arreglo = Auto::listar($where);  
         return $arreglo;
     }// fin function buscar
 

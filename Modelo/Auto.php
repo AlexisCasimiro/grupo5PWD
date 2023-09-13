@@ -1,5 +1,4 @@
 <?php
-include_once("../configuracion.php");
 class Auto{
 
     private $patente;
@@ -182,9 +181,11 @@ class Auto{
     public static function listar($parametro=""){
         $arreglo=array ();
         $base=new BaseDatos();
+        
         $sql="SELECT * FROM auto";
         if($parametro!=""){
             $sql.=' WHERE '.$parametro;
+            
         }
         $res=$base->Ejecutar($sql);
         if($res>-1){
