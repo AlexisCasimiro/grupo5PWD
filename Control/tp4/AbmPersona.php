@@ -103,18 +103,18 @@
     public function buscar($param){
         $where =" true ";
         if ($param<>NULL){
-            if  (isset($param['NroDni']))
-                $where.=" and NroDni =".$param['NroDni'];
+            if  (isset($param['dni']))
+                $where.=" and NroDni = '".$param['dni']."'";
             if  (isset($param['Apellido']))
-                 $where.=" and Apellido ='".$param['Apellido']."'";
+                 $where.=" and Apellido = '".$param['Apellido']."'";
             if  (isset($param['Nombre']))
-                 $where.=" and Nombre ='".$param['Nombre']."'";
+                 $where.=" and Nombre = '".$param['Nombre']."'";
             if  (isset($param['fechaNac']))
-                 $where.=" and fechaNac ='".$param['fechaNac']."'";
+                 $where.=" and fechaNac = '".$param['fechaNac']."'";
             if  (isset($param['Telefono']))
-                 $where.=" and Telefono ='".$param['Telefono']."'";
+                 $where.=" and Telefono = '".$param['Telefono']."'";
             if  (isset($param['Domicilio']))
-                 $where.=" and Domicilio ='".$param['Domicilio']."'";                    
+                 $where.=" and Domicilio = '".$param['Domicilio']."'";                    
         }// fin if <> null
         $arreglo = Persona::listar($where);  
         return $arreglo;

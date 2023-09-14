@@ -13,6 +13,7 @@ include_once("../estructura/header.php");
         <form action="accion/accionBuscarAuto.php" method="post" name="formPat" id="formPat">
         Ingrese la Patente: <input type="text" name="patente" id="patente">
         <button type="submit" class="btn btn-success w-10" name="enviar" id="enviar">Buscar</button>
+        <p name="aviso" id="aviso">El formato debe ser AAA111 o AA123BB</p>
     </form>
 
 </div>

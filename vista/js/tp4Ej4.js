@@ -2,7 +2,11 @@
 $(document).ready(function(){
     $("#formPat").submit(function(event){
         event.preventDefault();
-        if(comprobar()) this.submit(); 
+        if(comprobar()){
+            this.submit(); 
+        }else{
+            $("#aviso").show();
+        }
     });
 });
 function comprobar(){
@@ -14,6 +18,7 @@ function comprobar(){
 }
 
 jQuery('#patente').on('keyup', function() {
+    $("#aviso").hide();
     patenteOk(this.value);
 });
 
