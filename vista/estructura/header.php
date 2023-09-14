@@ -102,11 +102,11 @@
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Ejercicio 1</a></li>
               <li><a class="dropdown-item" href="#">Ejercicio 2</a></li>
-              <li><a class="dropdown-item" href="../tp4/verAutos.php">Ejercicio 3</a></li>
+              <li><a class="dropdown-item" href="../tp4/verAutos.php">Ej3 Ver Autos</a></li>
               <li><a class="dropdown-item" href="../tp4/buscarAuto.php">Ej4 Buscar Auto</a></li>
               <li><a class="dropdown-item" href="../tp4/listaPersonas.php">Ej3 Lista de Personas</a></li>
               <li><a class="dropdown-item" href="../tp4/nuevaPersona.php">Ejercicio 4</a></li>
-              <li><a class="dropdown-item" href="../tp4/nuevoAuto.php">Ejercicio 5</a></li>
+              <li><a class="dropdown-item" href="../tp4/nuevoAuto.php">Ej5 Nuevo Auto</a></li>
               <li><a class="dropdown-item" href="../tp4/cambioDuenio.php">Ejercicio 6</a></li>
               <li><a class="dropdown-item" href="../tp4/buscarPersona.php">Ejercicio 7</a></li>
             </ul>

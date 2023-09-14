@@ -46,15 +46,14 @@ if (isset($datos['NroDni'])){
 
 
 <?php
-var_dump($datos["NroDni"]);
 $listaAuto = $objAbmAuto->buscar($datos);
 //foreach(){
  //   $objPersona=
-    var_dump($listaAuto);
+   // var_dump($listaAuto);
 //}
 
-?>
-
+if( count($listaAuto)>0){
+    ?>
 <div class="container mt-3">
   <h4>Autos del titular </h4>
   <p>Titular registrado en la base de datos</p>            
@@ -66,12 +65,24 @@ $listaAuto = $objAbmAuto->buscar($datos);
         </tr>
     </thead>
     <tbody>
-<?php 
-    echo '<tr><td style="width:200px;">'.$objAuto->getPatente().'</td>';
-	echo '<td style="width:200px;">'.$objAuto->getMarca().'</td>';
-    echo '<td style="width:200px;">'.$objAuto->getModelo().'</td>';
+        <?php 
+   
+       foreach ($listaAuto as $objAuto) { 
+           echo '<tr><td style="width:200px;">'.$objAuto->getPatente().'</td>';
+           echo '<td style="width:200px;">'.$objAuto->getMarca().'</td>';
+           echo '<td style="width:200px;">'.$objAuto->getModelo().'</td>';
+        }
 
-?>
-    </tbody>
-  </table>
+      ?>
+        </tbody>
+</table>
 </div>
+<?php }
+    else{
+       ?>
+            <div>No se encontro Auto</div>
+        <?php   
+    }
+    
+    ?>
+
