@@ -3,13 +3,14 @@
 $(document).ready(()=>{
     $("#form-alta-auto").submit(function(evento){
         //declaracion de variables
+        console.log("entro");
         var resp=true;
-        var patente=$("#validationCustom01");
+        var patente=$("#Patente")
         var patNueva = /^[a-zA-Z][a-zA-Z][0-9][0-9][0-9][a-zA-Z][a-zA-Z]$/;
         var patVieja = /^[a-zA-Z][a-zA-Z][a-zA-Z][0-9][0-9][0-9]$/;
-        var marca=$("#validationCustom02");
-        var modelo=$("#validationCustom03");
-        var dniDuenio=$("#validationCustom04");
+        var marca=$("#Marca");
+        var modelo=$("#Modelo");
+        var dniDuenio=$("#DniDuenio");
         var modeloValue=modelo.val();
         var dniDuenioValue=dniDuenio.val();
         
