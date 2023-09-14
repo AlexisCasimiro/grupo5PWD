@@ -119,10 +119,10 @@
                  $where.=" and Marca = '".$param['Marca']."'";
             if  (isset($param['modelo']))
                  $where.=" and Modelo = '".$param['Modelo']."'";
-            if  (isset($param['DniDuenio']))
-                 $where.=" and DniDuenio '='".$param['DniDuenio']."'";                  
+            if  (isset($param['NroDni']))
+                 $where.=" and DniDuenio = '".$param['NroDni']."'";                  
             }// fin if <> null
-            
+
             $arreglo = Auto::listar($where);  
         return $arreglo;
     }// fin function buscar

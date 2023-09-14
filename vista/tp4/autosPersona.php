@@ -3,10 +3,13 @@ $Titulo = "Lista Personas";
 include_once("../estructura/header.php");
 $objAbmPersona = new AbmPersona();
 
+$objAbmAuto = new AbmAuto();
+
 $datos = data_submitted();
 $objPersona =NULL;
 
-if (isset($datos['dni'])){
+if (isset($datos['NroDni'])){
+
     $listaPersona = $objAbmPersona->buscar($datos);
     if (count($listaPersona)==1){
         $objPersona= $listaPersona[0];
@@ -32,6 +35,25 @@ if (isset($datos['dni'])){
     </tbody>
     </table>
 </div>
+
+
+
+
+
+
+
+
+
+
+<?php
+var_dump($datos["NroDni"]);
+$listaAuto = $objAbmAuto->buscar($datos);
+//foreach(){
+ //   $objPersona=
+    var_dump($listaAuto);
+//}
+
+?>
 
 <div class="container mt-3">
   <h4>Autos del titular </h4>

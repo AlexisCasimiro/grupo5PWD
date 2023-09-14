@@ -23,7 +23,7 @@ $listaPersona = $objAbmPersona->buscar(null);
             echo '<tr><td style="width:200px;">'.$objPersona->getDni().'</td>';
             echo '<td style="width:200px;">'.$objPersona->getNombre().'</td>';
             echo '<td style="width:200px;">'.$objPersona->getApellido().'</td>';
-            echo '<td><a href="autosPersona.php?dni='.$objPersona->getDni().'">Info</a></td></tr>';      
+            echo '<td><a href="autosPersona.php?NroDni='.$objPersona->getDni().'">Info</a></td></tr>';      
         }
     }
 ?>

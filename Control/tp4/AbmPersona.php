@@ -103,8 +103,8 @@
     public function buscar($param){
         $where =" true ";
         if ($param<>NULL){
-            if  (isset($param['dni']))
-                $where.=" and NroDni = '".$param['dni']."'";
+            if  (isset($param['NroDni']))
+                $where.=" and NroDni = '".$param['NroDni']."'";
             if  (isset($param['Apellido']))
                  $where.=" and Apellido = '".$param['Apellido']."'";
             if  (isset($param['Nombre']))
