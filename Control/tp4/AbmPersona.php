@@ -53,7 +53,6 @@
      */
     public function alta($param){
         $resp = false;
-        $param['NroDni'] =null;
         $elObjtPersona = $this->cargarObjeto($param);
         if ($elObjtPersona!=null and $elObjtPersona->insertar()){
             $resp = true;
