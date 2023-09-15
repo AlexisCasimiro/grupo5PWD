@@ -43,7 +43,6 @@ include_once("../../Control/tp4/AbmPersona.php")
         </div>
     </form>
     <hr style="height: 3px; color:green;">
-<h3 style="text-align: center; color:dodgerblue;">Datos de las personas cargadas en la base de datos</h3>
 <script src="../js/tp4Ej4b.js"></script>
 
 <?php

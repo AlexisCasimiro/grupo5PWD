@@ -8,20 +8,6 @@
     //$objPersona = NULL;
    // var_dump($datos);
 ?>
-<div class="container mt-3">
-    <h2>Registrar nueva persona</h2>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>DNI: <index type="text"></index></th>
-                <th>Apellido: <index type="text"></index></th>
-                <th>Nombre: <index type="text"></index></th>
-                <th>Fecha de nacimiento: <index type="text"></index></th>
-                <th>Teléfono: <index type="text"></index></th>
-                <th>Domicilio: <index type="text"></index></th>
-            </tr>
-        </thead>
-        <tbody>
             <?php
             
                 if (isset($datos['NroDni'])){
@@ -32,16 +18,13 @@
                     if (count($array)==0){
 
                             $Resultado = $objAbmPersona->alta($datos);
-                                echo "<p>Se agregaron los datos de la persona";
+                            echo "<div class='alert alert-success' role='alert'>Se agregó correctamente la Persona a la Base de Datos</div>";
                     }else{
-                        echo "La persona ya esta en la BD";
+                        echo "<div class='alert alert-danger' role='alert'>La persona ya se encuentra en la Base de Datos</div>";
                     }
                 }
                 
             ?>
-        </tbody>
-    </table>
-</div>
 <?php
 ?>
 <?php
