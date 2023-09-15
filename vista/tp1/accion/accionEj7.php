@@ -1,6 +1,5 @@
 <?php  
-    include_once("../../../control/tp1/Operacion.php");
-    include_once("../../../util/dataSubmit.php");
+    include_once("../../estructura/headerAccion.php");
     $datos=data_submitted();
     $obj=new Operacion($datos["nro1"],$datos["nro2"],$datos["operacion"]);
     $resultado=$obj->resolucion();
@@ -19,3 +18,6 @@
 
     <a id="volver" href="../ejercicio7.php">Volver</a>
 </div>
+<?php
+include_once("../../estructura/footer.php");
+?>

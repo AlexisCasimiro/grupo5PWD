@@ -1,6 +1,5 @@
 <?php
-    include_once("../../../control/tp1/DatosDeportes.php");
-    include_once("../../../util/dataSubmit.php");
+    include_once("../../estructura/headerAccion.php");
     $datos=data_submitted();
     $obj=new datosDeportes($datos["nombre"],$datos["apellido"],$datos["direccion"],$datos["edad"],$datos["sexo"],$datos["estudios"],$datos["deporte"]);
     $deportes=$obj->mostrarDeportes();
@@ -23,3 +22,6 @@
     
     <a id="volver-tp1-ej6" href="../ejercicio6.php">Volver</a>
 </div>
+<?php
+include_once("../../estructura/footer.php");
+?>

@@ -1,6 +1,5 @@
 <?php
-include_once("../../../control/tp1/DatosEstudios.php");
-include_once("../../../util/dataSubmit.php");
+include_once("../../estructura/headerAccion.php");
 $datos=data_submitted();
 $obj= new DatosEstudios($datos["nombre"],$datos["apellido"],$datos["direccion"],$datos["edad"],$datos["sexo"],$datos["estudios"]);
 
@@ -19,3 +18,7 @@ $obj= new DatosEstudios($datos["nombre"],$datos["apellido"],$datos["direccion"],
     </p>
 </div>
 <a id="volver-tp1-ej5"  href="../ejercicio5.php" class="volver">Volver</a>
+
+<?php
+include_once("../../estructura/footer.php");
+?>

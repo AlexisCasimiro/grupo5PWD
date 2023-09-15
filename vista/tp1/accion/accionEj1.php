@@ -1,20 +1,12 @@
 <?php
-include_once("../../../control/tp1/Numero.php");
-include_once("../../../util/dataSubmit.php");
+include_once("../../estructura/headerAccion.php");
 $datos=data_submitted();
 $nro=intval($datos["numero"]);
 $obj=new Numero($nro);
 $tipoNumero=$obj->verificaSigno();
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link type="text/css" rel="stylesheet" href="../../css/tp1Ej1.css">
-</head>
-<body>
 <div class="container-tp1-ej1">
-    <h1 id="tituloAccion1">El numero seleccionado es:</h1>
+    <h1 id="tituloAccion1">El numero seleccionado es: <?php echo $nro ?></h1>
     <?php 
    // var_dump($tipoNumero); 
         if($tipoNumero=="+"){
@@ -34,9 +26,11 @@ $tipoNumero=$obj->verificaSigno();
     <div class="volver-tp1-ej1"><a href="../ejercicio1.php" class="volver-accion-ej1">Volver</a></div>
 </div>
 <script type="text/javascript" src="../../js/tp1Ej1.js"></script>
-    
-</body>
-</html>
+
+<?php
+include_once("../../estructura/footer.php");
+?>
+
 
 
 

@@ -1,6 +1,5 @@
 <?php
-    include_once("../../../control/tp1/VerificaEdad.php");
-    include_once("../../../util/dataSubmit.php");
+    include_once("../../estructura/headerAccion.php");
     $datos=data_submitted();
     $obj=new VerificaEdad($datos["edad"]);
     $mayor=$obj->esMayor();
@@ -24,3 +23,7 @@
     </p>  
     <a id="volver-tp1-ej4" href="../ejercicio4.php">Volver</a> 
 </div>
+
+<?php
+include_once("../../estructura/footer.php");
+?>

@@ -1,6 +1,5 @@
 <?php 
-include_once("../../../control/tp1/Cine.php");
-include_once("../../../util/dataSubmit.php");
+include_once("../../estructura/headerAccion.php");
 $datos=data_submitted();
 $obj =new cine($datos["edad"],$datos["tipoCliente"]);
 $entrada=$obj->calcularPrecio();
@@ -16,3 +15,7 @@ $entrada=$obj->calcularPrecio();
     </div>
     <a id="volver" href="../ejercicio8.php">Volver</a>
 </div>
+
+<?php
+include_once("../../estructura/footer.php");
+?>

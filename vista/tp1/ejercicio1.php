@@ -1,9 +1,6 @@
 <?php
-include_once("../estructura/header.php");
+    include_once("../estructura/header.php");
  ?>
- <head>
-    <link type="text/css" rel="stylesheet" href="../css/tp1Ej1.css">
-</head>
 <section class="m-5" id="ejercicio1">
     <div class="container bg-light" id="ej1">
 

@@ -1,5 +1,5 @@
 <?php
-class Cine{
+class CinePelicula{
     private $nombre;
     private $actores;
     private $director;

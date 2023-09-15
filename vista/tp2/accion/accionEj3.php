@@ -1,7 +1,6 @@
 
 <?php
-    include_once("../../../control/tp2/Login.php");
-    include_once("../../../util/dataSubmit.php");
+    include_once("../../estructura/headerAccion.php");
     $datos=data_submitted();
     $obj=new verificarPass($datos["nombre"],$datos["pass"]);
 
@@ -21,3 +20,6 @@
     <a id="volver" href="../ejercicio3.php">Volver</a>
 </div>
 
+<?php
+include_once("../../estructura/footer.php");
+?>

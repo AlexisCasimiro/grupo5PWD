@@ -1,6 +1,5 @@
 <?php
-    include_once("../../../control/tp1/Horas.php");
-    include_once("../../../util/dataSubmit.php");
+    include_once("../../estructura/headerAccion.php");
     $horas=data_submitted();
     $obj=new Horas($horas);
     $cantHoras=$obj->horasTotales();
@@ -17,3 +16,7 @@
         <a id="volver-tp1-ej2" href="../ejercicio2.php">Volver</a>
     </div>
 </section>
+
+<?php
+include_once("../../estructura/footer.php");
+?>

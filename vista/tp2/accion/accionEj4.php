@@ -1,9 +1,8 @@
 <?php
 
-    include_once("../../../control/tp2/Cine.php");
-    include_once("../../../util/dataSubmit.php");
+include_once("../../estructura/headerAccion.php");
     $datos=data_submitted();
-    $obj=new Cine($datos["titulo"],$datos['autores'],$datos["director"],$datos["guion"],$datos["produccion"],$datos["anio"],$datos["nacionalidad"],$datos["genero"],$datos["duracion"],$datos["re"],$datos["sinopsis"]);
+    $obj=new CinePelicula($datos["titulo"],$datos["autores"],$datos["director"],$datos["guion"],$datos["produccion"],$datos["anio"],$datos["nacionalidad"],$datos["genero"],$datos["duracion"],$datos["re"],$datos["sinopsis"]);
 ?>
 
 <head>
@@ -27,3 +26,6 @@
 <div>
     <a id="volver" href="../ejercicio4.php">Volver</a>
 </div>
+<?php
+include_once("../../estructura/footer.php");
+?>

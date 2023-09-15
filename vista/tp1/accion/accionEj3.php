@@ -1,6 +1,5 @@
 <?php
-    include_once("../../../control/tp1/Datos.php");
-    include_once("../../../util/dataSubmit.php");
+    include_once("../../estructura/headerAccion.php");
     $datos=data_submitted();
     $obj=new Datos($datos["nombre"],$datos["apellido"],$datos["direccion"],$datos["edad"]);
 
@@ -20,3 +19,7 @@
         <a  id="volver-tp1-ej3" href="../ejercicio3.php">Volver</a>
     </div>
 </section>
+
+<?php
+include_once("../../estructura/footer.php");
+?>
