@@ -35,6 +35,7 @@
 }?>
     </tbody>
   </table>
+	<a href="../buscarAuto.php" class="btn btn-primary">Volver</a>
 </div>
 
 <?php
