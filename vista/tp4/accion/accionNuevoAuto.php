@@ -11,7 +11,7 @@
     $objAbmPersona= new AbmPersona;
     $dni=$datos['DniDuenio'];
     $dniDuenio['NroDni']=$datos['DniDuenio'];
-    $
+    
     $array=$objAbmPersona->buscar($dniDuenio);
     
     print_r($array);
