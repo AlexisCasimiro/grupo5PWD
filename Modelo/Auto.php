@@ -82,8 +82,10 @@ class Auto{
         if($res>-1){
             if($res>0){
                 $row=$base->Registro();
-                
-                $this->setear($row["Patente"],$row["Marca"],$row["Modelo"],$this->getobjPersona()->setDni($row["DniDuenio"]));
+                $objPersona=new Persona(); // creo al obj persona
+                $objPersona->setDni($row['DniDuenio']); // seteo su dni 
+                $objPersona->cargar();  // cargo a la persona con los demas datos de la persona (cargar de la clase Persona) 
+                $this->setear($row["Patente"],$row["Marca"],$row["Modelo"],$objPersona);
                 $resp=true; 
             }// fin if 
         }// fin if
@@ -195,9 +197,10 @@ class Auto{
                     $obj=new Auto();
                     $objPersona = new Persona();
                     $objPersona->setDni($row["DniDuenio"]);
+                    $objPersona->cargar(); 
                     $obj->setear($row["Patente"],$row["Marca"],$row["Modelo"],$objPersona);
                     array_push($arreglo,$obj); // carga el obj en el array 
-                    //var_dump($arreglo); 
+                    
                 }
             }
         }
