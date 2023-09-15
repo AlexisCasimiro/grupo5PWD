@@ -20,7 +20,7 @@ input[type=text]{
 
 /*  ACCION CAMBIO DUEÑO */
 #sinAuto,#sinPersona,#exito{
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: bold;
     font-family: 'Times New Roman', Times, serif;
 }
