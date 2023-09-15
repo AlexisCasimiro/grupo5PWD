@@ -1,5 +1,5 @@
 <?php
-$Titulo="Accion Cambio Dueño";
+$Titulo="Accion Cambio de Dueño";
 include_once("../../estructura/headerAccion.php");
 
 $datos=data_submitted();
@@ -14,14 +14,14 @@ $personas=$objPersona->buscar($datos);
     <link type="text/css" rel="stylesheet" href="../../css/tp4Ej6.css">
 </head>
 <section>
-    <h3>Modificación De Dueño</h3>
-    <div class="container">
+    <div class="container mt-3">
+        <h3 style="text-align: center; color:dodgerblue;">Modificación De Dueño</h3>  
         <?php
         if(count($auto)==0){
             ?>
             <div class="avisoAuto">
                 <p id="sinAuto">La patente ingresada no se encuentra en la base de datos</p>
-                <a href="../nuevoAuto.php" id="cargarNuevoAuto">Ir a cargar nuevo auto</a> 
+                <a href="../nuevoAuto.php" id="cargarNuevoAuto" class="btn btn-primary">Ir a cargar nuevo auto</a> 
             </div>
         <?php
         }//fin if
@@ -30,7 +30,7 @@ $personas=$objPersona->buscar($datos);
                 ?>
                 <div class="avisoPersona">
                     <p id="sinPersona">El DNI de la persona no se encuentra en la base de datos</p>
-                    <a href="../nuevaPersona.php" id="cargarNuevaPersona">Cargar a una nueva persona</a>
+                    <a href="../nuevaPersona.php" id="cargarNuevaPersona" class="btn btn-primary">Cargar a una nueva persona</a>
                 </div>        
                 <?php
 
@@ -52,22 +52,18 @@ $personas=$objPersona->buscar($datos);
                     }// fin if 
                     else{
                         ?>
-                            <p id="error">Hubo prblemas con la modificacion del dni </p>
+                            <p id="error">Hubo problemas con la modificacion del dni </p>
                         <?php
-
                     }
                     ?>
-
                 </div>
-
                 <?php
-
             }// fin else
-
         }
         ?>
-
-
+        <a href="../cambioDuenio.php" class="btn btn-primary">Volver</a>
     </div>
-    <a href="../cambioDuenio.php" id="VolverDuenio">Volver</a>
 </section>
+<?php
+include_once("../../estructura/footer.php");
+?>
