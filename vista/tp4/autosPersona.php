@@ -34,6 +34,7 @@ if (isset($datos['NroDni'])){
 ?>
     </tbody>
     </table>
+	<a href="./listaPersonas.php" class="btn btn-primary">Volver</a>
 </div>
 
 <?php
