@@ -21,7 +21,7 @@ $personas=$objPersona->buscar($datos);
             ?>
             <div class="avisoAuto">
                 <p id="sinAuto">La patente ingresada no se encuentra en la base de datos</p>
-                <a href="#" id="cargarNuevoAuto">Ir a cargar nuevo auto</a> 
+                <a href="../nuevoAuto.php" id="cargarNuevoAuto">Ir a cargar nuevo auto</a> 
             </div>
         <?php
         }//fin if
@@ -30,7 +30,7 @@ $personas=$objPersona->buscar($datos);
                 ?>
                 <div class="avisoPersona">
                     <p id="sinPersona">El DNI de la persona no se encuentra en la base de datos</p>
-                    <a href="#" id="cargarNuevaPersona">Cargar a una nueva persona</a>
+                    <a href="../nuevaPersona.php" id="cargarNuevaPersona">Cargar a una nueva persona</a>
                 </div>        
                 <?php
 
