@@ -100,8 +100,6 @@
               TP4
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Ejercicio 1</a></li>
-              <li><a class="dropdown-item" href="#">Ejercicio 2</a></li>
               <li><a class="dropdown-item" href="../tp4/verAutos.php">Ej3 Ver Autos</a></li>
               <li><a class="dropdown-item" href="../tp4/buscarAuto.php">Ej4 Buscar Auto</a></li>
               <li><a class="dropdown-item" href="../tp4/listaPersonas.php">Ej3 Lista de Personas</a></li>
