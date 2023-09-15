@@ -134,7 +134,7 @@ class Auto{
     public function modificar(){
         $res=false;
         $base=new BaseDatos();
-        $sql="UPDATE auto SET Marca='".$this->getMarca()."', Modelo='".$this->getModelo()."', objPersona='".$this->getobjPersona()->getDni()."' WHERE Patente='".$this->getPatente()."'";
+        $sql="UPDATE auto SET Marca='".$this->getMarca()."', Modelo='".$this->getModelo()."', DniDuenio='".$this->getobjPersona()->getDni()."' WHERE Patente='".$this->getPatente()."'";
         if($base->Iniciar()){
             if($base->Ejecutar($sql)){
                 $res=true;

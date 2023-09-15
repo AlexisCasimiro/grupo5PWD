@@ -117,6 +117,7 @@
                  $where.=" and Domicilio = '".$param['Domicilio']."'";                    
         }// fin if <> null
         $arreglo = Persona::listar($where);  
+       // var_dump($where);
         return $arreglo;
     }// fin function buscar
 

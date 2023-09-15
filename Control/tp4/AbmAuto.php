@@ -12,7 +12,9 @@
            
         if( array_key_exists('Patente',$param) and array_key_exists('Marca',$param) and array_key_exists('Modelo',$param) and array_key_exists('DniDuenio',$param)){
             $obj = new Auto(); // llama a la capa modelo 
-            $obj->setear($param["Patente"],$param["Marca"],$param["Modelo"],$param["DniDuenio"]);
+            $objPersona=new Persona();
+            $objPersona->setDni($param['DniDuenio']);
+            $obj->setear($param["Patente"],$param["Marca"],$param["Modelo"],$objPersona);
 
         }
         return $obj;
@@ -122,7 +124,8 @@
             if  (isset($param['NroDni']))
                  $where.=" and DniDuenio = '".$param['NroDni']."'";                  
             }// fin if <> null
-
+            echo("<br>"); 
+           // var_dump($where); 
             $arreglo = Auto::listar($where);  
         return $arreglo;
     }// fin function buscar
