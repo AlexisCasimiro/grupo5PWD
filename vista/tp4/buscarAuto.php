@@ -1,12 +1,7 @@
 <?php
 $Titulo = "Buscar Auto";
 include_once("../estructura/header.php");
- /*
-    include_once "../configuracion.php";
-    $objAbmAuto = new AbmAuto();
 
-    $listaAuto = $objAbmAuto->buscar(null);
-*/
 ?>	
 <div>
     <h1>Buscar Auto por la Patente</h1>
