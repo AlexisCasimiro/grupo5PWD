@@ -60,7 +60,6 @@
      */
     public function alta($param){
         $resp = false;
-        $param['Patente'] =null;
         $elObjAuto = $this->cargarObjeto($param);
         if ($elObjAuto!=null and $elObjAuto->insertar()){
             $resp = true;
