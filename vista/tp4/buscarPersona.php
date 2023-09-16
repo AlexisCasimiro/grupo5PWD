@@ -11,7 +11,7 @@ include_once("../estructura/header.php");
     <div class="form-group row align-items-center">
         <label for="numDoc" class="col" style="max-width: fit-content">Numero de documento:</label>
         <input type="number" class="form-control col" name="NroDni" id="NroDni" placeholder="Ingrese el numero de documento" style="max-width: 280px; max-height:30px;">
-        <button type="submit" class="btn btn-success btn-sm m-2 enviar" name="enviar" id="enviar">Buscar</button>
+        <button type="submit" class="btn btn-primary btn-sm m-2 enviar" name="enviar" id="enviar">Buscar</button>
     </div>
 </form>
 <?php
