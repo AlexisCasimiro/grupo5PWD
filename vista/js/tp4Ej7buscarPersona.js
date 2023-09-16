@@ -1,6 +1,6 @@
 //buscarPersona.php
 $(document).ready(function () {
-    $('#formBuscarPersona').validate({
+   /**  $('#formBuscarPersona').validate({
         rules: {
             dni: {
                 required: true,
@@ -26,14 +26,27 @@ $(document).ready(function () {
         unhighlight: function (element, errorClass, validClass) {
             $(element).removeClass('is-invalid').addClass('is-valid');
         }
+
     });
+
+    */
+
+    $('#formBuscarPersona').submit(function(e) {
+        e.preventDefault();
+        let dni=$("#NroDni").val();
+        if(!dni=="" && dni.length==8){
+            this.submit(); 
+        }
+        else{
+            $("#aviso").text("Verifique la cantidad de digitos (8 digitos)");
+            $("#aviso").css("color","red");
+        }
+
+    });
+
+
+
 });
 
-$('#formBuscarPersona').submit(function(e) {
-    if ($('#formBuscarPersona').valid()) {
-      // El formulario es válido, continúa con el envío
-    } else {
-      e.preventDefault(); // Evita el envío si el formulario no es válido
-    }
-  });
+
 
