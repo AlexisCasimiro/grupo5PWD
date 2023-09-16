@@ -1,9 +1,7 @@
 <?php
 $Titulo = "Buscar Persona por numero de documento";
-//include_once("../../../configuracion.php");
 include_once("../../estructura/headerAccion.php");
-include_once("../../../control/tp4/AbmPersona.php");
-include_once("../../../util/funciones.php");
+
 
 
 $datos = (data_submitted());
