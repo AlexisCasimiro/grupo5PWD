@@ -1,9 +1,8 @@
 <?php
     $Titulo = "Actualizar";
-    include_once("../estructura/header.php");
-$datos = (data_submitted());
-
-$datos = data_submitted();
+    include_once("../../estructura/headerAccion.php");
+//$datos = (data_submitted());
+$datos = data_submitted(); // verificar que los datos tengas todas las claves para realizar la modificacion 
 $objAbmPersona = new AbmPersona();
 //$objPersona = NULL;
 // var_dump($datos);
@@ -12,8 +11,6 @@ $objAbmPersona = new AbmPersona();
         
             if (isset($datos['NroDni'])){
                 $dniPersona["NroDni"] = $datos["NroDni"];
-
-                
                 $array = $objAbmPersona->buscar($dniPersona);
                 if (count($array)==0){
 

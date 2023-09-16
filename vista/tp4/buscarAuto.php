@@ -4,11 +4,19 @@ include_once("../estructura/header.php");
 
 ?>	
 <div>
-    <h1>Buscar Auto por la Patente</h1>
-        <form action="accion/accionBuscarAuto.php" method="post" name="formPat" id="formPat">
-        Ingrese la Patente: <input type="text" name="patente" id="patente">
-        <button type="submit" class="btn btn-success w-10" name="enviar" id="enviar">Buscar</button>
-        <p name="aviso" id="aviso">El formato debe ser AAA111 o AA123BB</p>
+    <h1 style="text-align: center; color:dodgerblue;">Buscar Auto por la Patente</h1>
+        <form class="row g-3 needs-validation" action="accion/accionBuscarAuto.php" method="post" name="formPat" id="formPat">
+        <div class="col-md-2"></div>
+        <div class="col-md-2">
+        <label for="validationCustom01" class="form-label">Patente</label>
+        <input type="text" class="form-control" name="patente" id="patente" placeholder="AAA123 o AA123BB">
+        </div>
+        <div class="col-md-8"> </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-4"> 
+        <button type="submit" class="btn btn-primary" name="enviar" id="enviar">Buscar</button>
+       
+        </div>
     </form>
 
 </div>

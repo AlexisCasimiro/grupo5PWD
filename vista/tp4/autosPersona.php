@@ -19,8 +19,8 @@ if (isset($datos['NroDni'])){
 ?>	
 
 <div class="container mt-3">
-    <h2>Titular </h2>
-    <p>Titular registrado en la base de datos</p>            
+    <h2 style="text-align: center; color:dodgerblue;">Titular</h2>
+    <h5 style="text-align: left; color:dodgerblue;">Registro en la base de datos</h5>           
     <table class="table">
         <thead><tr><th>Dni</th>
                 <th>Nombre</th>
@@ -34,35 +34,23 @@ if (isset($datos['NroDni'])){
 ?>
     </tbody>
     </table>
+	<a href="./listaPersonas.php" class="btn btn-primary">Volver</a>
 </div>
-
-
-
-
-
-
-
-
-
 
 <?php
 $listaAuto = $objAbmAuto->buscar($datos);
-//foreach(){
- //   $objPersona=
-   // var_dump($listaAuto);
-//}
 
 if( count($listaAuto)>0){
-    ?>
+?>
 <div class="container mt-3">
-  <h4>Autos del titular </h4>
-  <p>Titular registrado en la base de datos</p>            
-  <table class="table">
-  <thead>
-        <tr><th>Patente</th>
-        <th>Marca</th>
-        <th>Modelo</th>
-        </tr>
+    <h2 style="text-align: center; color:dodgerblue;">Autos registrados de la persona</h2>           
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Patente</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+            </tr>
     </thead>
     <tbody>
         <?php 
@@ -72,16 +60,21 @@ if( count($listaAuto)>0){
            echo '<td style="width:200px;">'.$objAuto->getMarca().'</td>';
            echo '<td style="width:200px;">'.$objAuto->getModelo().'</td>';
         }
-
       ?>
         </tbody>
-</table>
+    </table>
 </div>
 <?php }
     else{
        ?>
-            <div>No se encontro Auto</div>
-        <?php   
+            <div class="container mt-3">
+            <h4 style="text-align: keft; color:red;">No se encontraron autos registrados para esta persona</h4> 
+            </div>
+<?php   
+    }
+    include_once("../estructura/footer.php");
+    ?>
+
     }
     
     ?>

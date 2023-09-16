@@ -7,8 +7,8 @@ $listaPersona = $objAbmPersona->buscar(null);
 ?>	
 
 <div class="container mt-3">
-  <h2>Tabla Personas</h2>
-  <p>Listado de personas dueñas de autos registradas en la base de datos</p>            
+  <h2 style="text-align: center; color:dodgerblue;">Tabla Personas</h2>
+  <h5 style="text-align: left; color:dodgerblue;">Listado de personas dueñas de autos registradas en la base de datos</h5>            
   <table class="table">
     <thead>
         <tr><th>Dni</th>

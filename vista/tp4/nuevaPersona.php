@@ -1,5 +1,6 @@
 <?php
-$Titulo="Nueva Persona";
+$Titulo = "Agregar Pernona nueva";
+
 include_once("../estructura/header.php");
 include_once("../../Control/tp4/AbmPersona.php")
 ?>

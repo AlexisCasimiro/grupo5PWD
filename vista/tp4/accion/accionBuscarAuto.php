@@ -14,8 +14,8 @@
     }
 ?>
 <div class="container mt-3">
-  <h2>Auto Registrado</h2>
-  <p>Auto registrado en la base de datos</p>            
+  <h2 style="text-align: center; color:dodgerblue;">Buscar Auto por la Patente</h2>
+  <h5 style="text-align: center; color:dodgerblue;">Auto registrado en la base de datos</h5>            
   <table class="table">
     <thead>
       <tr><th>Patente</th>
@@ -31,18 +31,12 @@
 
  }else {
     
-    echo "<p>No se encontro la Patente solicitada";
+    echo '<h5 style="text-align: left; color:red;">No se encontro la Patente solicitada</5>';
 }?>
     </tbody>
   </table>
+	<a href="../buscarAuto.php" class="btn btn-primary">Volver</a>
 </div>
-
-
-
-
-
-
-
 
 <?php
 include_once("../../estructura/footer.php");

@@ -1,7 +1,7 @@
 <?php
     $Titulo = "Agregar una nueva persona por su DNI";
     include_once("../../estructura/headerAccion.php");
-    include_once("../../../configuracion.php");
+
 
     $datos = data_submitted();
     $objAbmPersona = new AbmPersona();
