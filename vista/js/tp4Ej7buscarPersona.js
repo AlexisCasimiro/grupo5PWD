@@ -2,14 +2,14 @@
 $(document).ready(function () {
     $('#formBuscarPersona').validate({
         rules: {
-            dni: {
+            NroDni: {
                 required: true,
                 minlength:8,
                 maxlength:8
             },
         },
         messages: {
-            dni: {
+            NroDni: {
                 required: 'Por favor ingrese el número de documento',
                 minlength: 'El número de documento debe contener mínimo 8 dígitos',
                 maxlength: 'El número de documento debe contener máximo 8 dígitos'
