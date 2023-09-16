@@ -12,8 +12,7 @@ if (isset($datos['NroDni'])){
     $listaPersonas = $objAbmPersona->buscar($datos);
     if (count($listaPersonas)==1){
         $objPersona= $listaPersonas[0];
-    }
-}
+
 
 ?>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
@@ -75,5 +74,14 @@ if (isset($datos['NroDni'])){
     </form>
 </div>
 <?php
+    }else{
+        ?>
+        <div class="container mt-3">
+        <h3 class="col">No se encontraron datos de la persona:</h3>
+        <a href="../buscarPersona.php" class="btn btn-primary">Volver</a>
+    </div>
+<?php
+    }
+}
 include_once("../../estructura/footer.php");
 ?>
