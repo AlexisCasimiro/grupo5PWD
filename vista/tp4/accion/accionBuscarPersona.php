@@ -3,10 +3,8 @@ $Titulo = "Buscar Persona por numero de documento";
 include_once("../../estructura/headerAccion.php");
 
 $datos = data_submitted();
-//echo "<script type='text/javascript'> datosPhp=".json_encode($datos).";</script>";
 $objAbmPersona=new AbmPersona();
 $objPersona =NULL;
-//var_dump($datos); 
 if (isset($datos['NroDni'])){
     $listaPersonas = $objAbmPersona->buscar($datos);
     if (count($listaPersonas)==1){
@@ -84,11 +82,6 @@ if (isset($datos['NroDni'])){
         <a href="../buscarPersona.php" class="btn btn-primary">Volver</a>
         </div>
 <?php
-    }
-}
-include_once("../../estructura/footer.php");
-?>
-
     }
 }
 include_once("../../estructura/footer.php");
