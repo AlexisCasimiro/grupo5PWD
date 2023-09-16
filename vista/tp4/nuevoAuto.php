@@ -1,4 +1,5 @@
 <?php
+$Titulo="Nuevo Auto";
 include_once("../estructura/header.php");
 include_once("../../Control/tp4/AbmPersona.php")
 ?>
