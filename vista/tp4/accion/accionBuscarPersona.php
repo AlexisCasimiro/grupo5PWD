@@ -4,20 +4,17 @@ include_once("../../estructura/headerAccion.php");
 
 
 
-$datos = (data_submitted());
+$datos = data_submitted();
 echo "<script type='text/javascript'> datosPhp=".json_encode($datos).";</script>";
-/*$obj=new AbmPersona;
-$datos=["nroDni"=>"28326986"];
-$persona=$obj->buscar($datos); <-- esto es lo que intenté hacer pero no me funciono la bd*/
+$objAbmPersona=new AbmPersona();
+$objPersona =NULL;
+if (isset($datos['NroDni'])){
+    $listaPersonas = $objAbmPersona->buscar($datos);
+    if (count($listaPersonas)==1){
+        $objPersona= $listaPersonas[0];
+    }
+}
 
-$persona = [//<-- este es el objeto que cree provisoriamente
-    "NroDni" => $datos,
-    "Nombre" => "Juan",
-    "Apellido" => "Perez",
-    "Domicilio" => "Avenida Siempreviva",
-    "Telefono" => "299765437",
-    "fechaNac" => "26/07/1992"
-];
 ?>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 <link rel="stylesheet" href="../../css/tp4Ej7.css">
@@ -34,7 +31,7 @@ $persona = [//<-- este es el objeto que cree provisoriamente
     <form class="container contenedor" name="formEditarPersona" action="ActualizarDatosPersona.php" id="formEditarPersona">
         <div class="row form-group">
             <label for="nombre" class="col">Nombre:</label>
-            <span class="col" id="personaNombre"><?= $persona["Nombre"] ?></span>
+            <span class="col" id="personaNombre"><?php echo $objPersona->getNombre(); ?></span>
             <div class="col">
                 <input class="form-control row" type="text" name="nombre" id="nombre" placeholder="Nuevo nombre">
                 <span class="error-message row"></span>
@@ -44,7 +41,7 @@ $persona = [//<-- este es el objeto que cree provisoriamente
         </div>
         <div class="row form-group">
             <label for="apellido" class="col">Apellido:</label>
-            <span class="col" id="personaApellido"><?= $persona["Apellido"] ?></span>
+            <span class="col" id="personaApellido"><?php echo $objPersona->getApellido(); ?></span>
             <div class="col">
                 <input class="form-control row" type="text" name="apellido" id="apellido" placeholder="Nuevo apellido">
                 <span class="error-message row"></span>
@@ -52,7 +49,7 @@ $persona = [//<-- este es el objeto que cree provisoriamente
         </div>
         <div class="row form-group">
             <label for="fechaNac" class="col">Fecha de nacimiento:</label>
-            <span class="col" id="personaFechaNac"><?= $persona["fechaNac"] ?></span>
+            <span class="col" id="personaFechaNac"><?php echo $objPersona->getfechaNac(); ?></span>
             <div class="col">
                 <input class="form-control row" type="date" name="fechaNac" id="fechaNac">
                 <span class="error-message row"></span>
@@ -60,7 +57,7 @@ $persona = [//<-- este es el objeto que cree provisoriamente
         </div>
         <div class="row form-group">
             <label for="domicilio" class="col">Domicilio:</label>
-            <span class="col" id="personaDomicilio"><?= $persona["Domicilio"] ?></span>
+            <span class="col" id="personaDomicilio"><?php echo $objPersona->getDomicilio(); ?></span>
             <div class="col">
                 <input class="form-control row" type="text" name="domicilio" id="domicilio" placeholder="Nuevo domicilio">
                 <span class="error-message row"></span>
@@ -68,7 +65,7 @@ $persona = [//<-- este es el objeto que cree provisoriamente
         </div>
         <div class="row form-group">
             <label for="telefono" class="col">Telefono:</label>
-            <span class="col" id="personaTelefono"><?= $persona["Telefono"] ?></span>
+            <span class="col" id="personaTelefono"><?php echo $objPersona->getTelefono(); ?></span>
             <div class="col">
                 <input class="form-control row" type="number" name="telefono" id="telefono" placeholder="Nuevo telefono">
                 <span class="error-message row"></span>
