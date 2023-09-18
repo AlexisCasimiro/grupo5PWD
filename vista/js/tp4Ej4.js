@@ -5,20 +5,19 @@ $(document).ready(function(){
         if(comprobar()){
             this.submit(); 
         }else{
-            $("#aviso").show();
+            alert ("El formato adecuado es: AAA123 O AA123BB");
         }
     });
 });
 function comprobar(){
     $('#patente').text(function(){
-      //  $('#patente').toUpperCase();
         $ok = patenteOk(this.value);
     });  
     return $ok;
 }
 
 jQuery('#patente').on('keyup', function() {
-    $("#aviso").hide();
+    $("#patente").val($("#patente").val().toUpperCase());
     patenteOk(this.value);
 });
 
