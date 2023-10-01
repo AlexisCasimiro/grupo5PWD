@@ -9,11 +9,5 @@ $objAbmPersona = new AbmPersona();
 // var_dump($datos);
 
 
-
-
-
-
-
-<?php
 include_once("../../estructura/footer.php");
 ?>
