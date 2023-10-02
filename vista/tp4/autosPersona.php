@@ -24,13 +24,19 @@ if (isset($datos['NroDni'])){
     <table class="table">
         <thead><tr><th>Dni</th>
                 <th>Nombre</th>
-                <th>Apellido</th></tr>
+                <th>Apellido</th>
+                <th>Fecha Nachimiento</th>
+                <th>Telefono</th>
+                <th>Domicilio</th><</tr>
         </thead>
     <tbody>
 <?php 
     echo '<tr><td style="width:200px;">'.$objPersona->getDni().'</td>';
 	echo '<td style="width:200px;">'.$objPersona->getNombre().'</td>';
     echo '<td style="width:200px;">'.$objPersona->getApellido().'</td>';
+    echo '<td style="width:200px;">'.$objPersona->getfechaNac().'</td>';
+    echo '<td style="width:200px;">'.$objPersona->getTelefono().'</td>';
+    echo '<td style="width:200px;">'.$objPersona->getDomicilio().'</td>';
 ?>
     </tbody>
     </table>

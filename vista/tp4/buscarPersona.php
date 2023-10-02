@@ -2,8 +2,7 @@
 $Titulo = "Buscar Persona";
 include_once("../estructura/header.php");
 ?>	
-<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script> -->
+
 <head>
 <link rel="stylesheet" href="../css/tp4Ej7.css">
 </head>
@@ -22,3 +21,4 @@ include_once("../estructura/header.php");
 <?php
 include_once("../estructura/footer.php");
 ?>	
+
