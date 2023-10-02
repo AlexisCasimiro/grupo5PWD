@@ -14,6 +14,6 @@ $objAbmPersona = new AbmPersona();
 
 
 
-<?php
+?>php
 include_once("../../estructura/footer.php");
-?>
+<?
