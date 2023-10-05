@@ -13,10 +13,10 @@ class BaseDatos extends PDO {
   	private $indice;
   	private $resultado;
     
-    public function __construct(){
+    public function __construct($nombreBD){
         $this->engine = 'mysql';
         $this->host = 'localhost';
-        $this->database = 'infoautos';
+        $this->database = $nombreBD;
         $this->user = 'root';
         $this->pass = '';
         $this->debug = true;
@@ -47,7 +47,7 @@ class BaseDatos extends PDO {
         
     }
 
-    public function baseDatos(){
+    public function getbaseDatos(){
         return $this->database;
     }
 
@@ -177,6 +177,7 @@ class BaseDatos extends PDO {
    
    private function EjecutarSelect($sql){
        $cant = -1;
+       //var_dump($sql);
        $resultado=parent::query($sql);
        if(!$resultado){
            $this->analizarDebug();

@@ -134,6 +134,7 @@
             echo("<br>"); 
            // var_dump($where); 
             $arreglo = reloj::listar($where);  
+            
         return $arreglo;
     }// fin function buscar
 

@@ -1,7 +1,8 @@
 <?php
 $Titulo = "Lista Relojes";
-include_once("../../estructura/header.php");
+include_once("../../estructura/headerAccion.php");
 $objAbmReloj = new AbmReloj();
+
 
 $listaReloj = $objAbmReloj->buscar(null);
 ?>	
@@ -16,6 +17,7 @@ $listaReloj = $objAbmReloj->buscar(null);
             <th>Tipo</th>
             <th>Marca</th>
             <th>Precio</th>
+            <th>Stock</th>
         </tr>
     </thead>
     <tbody>
@@ -27,6 +29,7 @@ $listaReloj = $objAbmReloj->buscar(null);
             echo '<td style="width:200px;">'.$objReloj->getobjTipo()->getnombreTipo().'</td>';
             echo '<td style="width:200px;">'.$objReloj->getobjMarca()->getnombreMarca().'</td>';
             echo '<td style="width:200px;">'.$objReloj->getprecio().'</td>';
+            echo '<td style="width:200px;">'.$objReloj->getstock().'</td>';
             echo '<td><a href="editarReloj.php?idReloj='.$objReloj->getidReloj().'">Editar</a></td></tr>';      
         }
     }

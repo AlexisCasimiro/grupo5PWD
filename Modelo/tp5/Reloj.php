@@ -93,8 +93,7 @@ class Reloj{
      */
     public function cargar(){
         $resp=false; 
-       $base=new BaseDatos();
-       $base->setBaseDatos("relojes");
+       $base=new BaseDatos("relojes");
        $sql="SELECT * FROM reloj WHERE idReloj='".$this->getidReloj()."'";
        if($base->Iniciar()){
         $res=$base->Ejecutar($sql);
@@ -130,8 +129,7 @@ class Reloj{
      */
     public function insertar(){
         $resp=false;
-        $base=new BaseDatos();
-        $base->setBaseDatos("relojes");
+        $base=new BaseDatos("relojes");
         $sql="INSERT INTO Reloj(idReloj,nombreReloj,precio,stock,idTipo,idMarca) VALUES('".$this->getidReloj()."','".$this->getnombreReloj()."',
         '".$this->getprecio()."','".$this->getstock()."','".$this->getobjTipo()->getidTipo()."',".$this->getobjMarca()->getidMarca()."',".$this->getprecio().");";
         if($base->Iniciar()){
@@ -159,8 +157,7 @@ class Reloj{
      */
     public function modificar(){
         $res=false;
-        $base=new BaseDatos();
-        $base->setBaseDatos("relojes");
+        $base=new BaseDatos("relojes");
         $sql="UPDATE reloj SET nombreReloj='".$this->getnombreReloj()."', precio='".$this->getprecio()."', stock='".$this->getstock()."'
         , objTipo='".$this->getobjTipo()->getidTipo()."'
         , idMarca='".$this->getobjMarca()->getidMarca()."',
@@ -188,8 +185,7 @@ class Reloj{
      */
     public function eliminar(){
         $res=false; 
-        $base=new BaseDatos();
-        $base->setBaseDatos("relojes");
+        $base=new BaseDatos("relojes");
         $sql="DELETE FROM reloj WHERE idReloj='".$this->getidReloj()."'";
         if($base->Iniciar()){
             if($base->Ejecutar($sql)){
@@ -212,8 +208,7 @@ class Reloj{
      */
     public static function listar($parametro=""){
         $arreglo=array ();
-        $base=new BaseDatos();
-        $base->setBaseDatos("relojes");
+        $base=new BaseDatos("relojes");
         
         $sql="SELECT * FROM reloj";
         if($parametro!=""){
