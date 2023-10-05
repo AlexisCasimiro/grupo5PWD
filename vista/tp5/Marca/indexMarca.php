@@ -1,6 +1,6 @@
 <?php
 $Titulo = "Lista Marcas";
-include_once("../../estructura/header.php");
+include_once("../../estructura/headerAccion.php");
 $objAbmMarca = new AbmMarca();
 
 $listaMarca = $objAbmMarca->buscar(null);

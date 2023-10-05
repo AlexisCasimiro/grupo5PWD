@@ -110,6 +110,20 @@
               <li><a class="dropdown-item" href="../tp5/phpspreadsheet.php">PhpSpreadsheet</a></li>
             </ul>
           </li>
+
+
+          <!--DROPDOWN TP5_A -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              TP5_A
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="../tp5/reloj/indexReloj.php">Relojes</a></li>
+              <li><a class="dropdown-item" href="../tp5/marca/indexMarca.php">Marcas</a></li>
+              <li><a class="dropdown-item" href="../tp5/tipo/indexTipo.php">Tipos de relojes</a></li>
+            </ul>
+          </li>
+
         </ul>
       </div>
     </div>

@@ -1,6 +1,6 @@
 <?php
 $Titulo = "Lista Tipos";
-include_once("../../estructura/header.php");
+include_once("../../estructura/headerAccion.php");
 $objAbmTipo = new AbmTipo();
 
 $listaTipo = $objAbmTipo->buscar(null);
@@ -30,5 +30,6 @@ $listaTipo = $objAbmTipo->buscar(null);
 </div>
 
 <?php
+include_once("./crearHC.php");
 include_once("../../estructura/footer.php");
 ?>
