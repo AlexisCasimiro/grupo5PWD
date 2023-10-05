@@ -31,8 +31,7 @@ $worksheet->getCell('B5')->getCalculatedValue()
 ), PHP_EOL;
 
 
-$writer = new Xlsx($spreadsheet); // crea un obj para escribir en el excel
-$writer->save('grupo5.xlsx');
+$inputFileName = './grupo5.xlsx';
 
 //echo "<h1>Hecho</h1>";
 
