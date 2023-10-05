@@ -9,7 +9,7 @@
         {
             $this->nombreMarca="";
             $this->idMarca=0;
-            $this->mensaje="";
+    
         }// fin constructor 
 
         // METODO SETEAR

@@ -23,6 +23,7 @@ spl_autoload_register(function ($class_name){
     $directorys = array(
         $_SESSION['ROOT'].'Modelo/',
         $_SESSION['ROOT'].'Modelo/conector/',
+        $_SESSION['ROOT'].'Modelo/tp5/',
         $_SESSION['ROOT'].'Control/',
         $_SESSION['ROOT'].'Control/tp1/',
         $_SESSION['ROOT'].'Control/tp2/',
