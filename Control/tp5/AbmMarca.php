@@ -107,7 +107,7 @@
             if  (isset($param['nombreMarca']))
                  $where.=" and nombreMarca = '".$param['nombreMarca']."'";                 
         }// fin if <> null
-        $arreglo = Marca::listar($where);  
+        $arreglo = marca::listar($where);  
        // var_dump($where);
         return $arreglo;
     }// fin function buscar

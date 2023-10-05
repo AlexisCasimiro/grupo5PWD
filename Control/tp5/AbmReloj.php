@@ -10,13 +10,15 @@
     private function cargarObjeto($param){
         $obj = null;
            
-        if( array_key_exists('idReloj',$param) and array_key_exists('nombreReloj',$param) and array_key_exists('precio',$param) and array_key_exists('idTipo',$param) and array_key_exists('idMarca',$param)){
+        if( array_key_exists('idReloj',$param) and array_key_exists('nombreReloj',$param) and 
+        array_key_exists('precio',$param) and array_key_exists('idTipo',$param) and 
+        array_key_exists('idMarca',$param) and array_key_exists('precio',$param) and array_key_exists('stock',$param)){
             $obj = new Reloj(); 
             $objTipo=new Tipo();
             $objTipo->setidTipo($param['idTipo']);
             $objMarca=new Marca();
             $objMarca->setidMarca($param['idMarca']);
-            $obj->setear($param["idReloj"],$param["nombreReloj"],$param["precio"],$objTipo,$objMarca);
+            $obj->setear($param["idReloj"],$param["nombreReloj"],$param["precio"],$param['stock'],$objTipo,$objMarca);
 
         }
         return $obj;
@@ -35,7 +37,7 @@
         
         if( isset($param['idReloj']) ){
             $obj = new Reloj();
-            $obj->setear($param['idReloj'], null,null,null,null);
+            $obj->setear($param['idReloj'],null,null,null,null,null);
         }
         return $obj;
     }// fin function cargarObjetoConClave
@@ -122,6 +124,8 @@
                  $where.=" and nombreReloj = '".$param['nombreReloj']."'";
             if  (isset($param['precio']))
                  $where.=" and precio = '".$param['precio']."'";
+            if  (isset($param['stock']))
+                $where.=" and stock ='".$param['stock']."'";
             if  (isset($param['idTipo']))
                  $where.=" and idTipo = '".$param['idTipo']."'";    
             if  (isset($param['idMarca']))
@@ -129,7 +133,7 @@
             }// fin if <> null
             echo("<br>"); 
            // var_dump($where); 
-            $arreglo = Reloj::listar($where);  
+            $arreglo = reloj::listar($where);  
         return $arreglo;
     }// fin function buscar
 

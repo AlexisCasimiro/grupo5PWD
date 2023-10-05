@@ -107,7 +107,7 @@
             if  (isset($param['nombreTipo']))
                  $where.=" and nombreTipo = '".$param['nombreTipo']."'";                 
         }// fin if <> null
-        $arreglo = Tipo::listar($where);  
+        $arreglo = tipo::listar($where);  
        // var_dump($where);
         return $arreglo;
     }// fin function buscar
