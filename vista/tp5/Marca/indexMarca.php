@@ -1,6 +1,6 @@
 <?php
 $Titulo = "Lista Marcas";
-include_once("../../estructura/header.php");
+include_once("../../estructura/headerAccion.php");
 $objAbmMarca = new AbmMarca();
 
 $listaMarca = $objAbmMarca->buscar(null);
@@ -8,25 +8,31 @@ $listaMarca = $objAbmMarca->buscar(null);
 
 <div class="container mt-3">
   <h2 style="text-align: center; color:dodgerblue;">Tabla Marcas</h2>
-  <h5 style="text-align: left; color:dodgerblue;">Marcas disponibles</h5>            
-  <table class="table">
-    <thead>
-        <tr><th>id</th>
-            <th>Marca</th>
+  <h5 style="text-align: left; color:dodgerblue;">Marcas disponibles</h5>    
+  <form action="editarMarca.php" method="post">
+    <table>
+        <tr>
+            <th style="width:30%">Id</th>
+            <th style="width:70%">Nombre de la Marca</th>
+            <th style="width:auto"></th>
+            <th style="width:auto"></th>
         </tr>
-    </thead>
-    <tbody>
-<?php	
-    if( count($listaMarca)>0){
-         foreach ($listaMarca as $objMarca) { 
-            echo '<tr><td style="width:200px;">'.$objMarca->getidMarca().'</td>';
-            echo '<td style="width:200px;">'.$objMarca->getnombreMarca().'</td>';
-            echo '<td><a href="editarMarca.php?idMarca='.$objMarca->getidMarca().'">Editar</a></td></tr>';      
-        }
-    }
-?>
-    </tbody>
-  </table>
+        
+            <?php if(count($listaMarca)>0){
+                foreach($listaMarca as $marca){?>
+                    <tr>
+                    <td><input type="hidden" name="idMarca" value="<?php echo($marca->getidMarca()) ?>"> <?php echo($marca->getidMarca()) ?></td>
+                    <td><input type="hidden" name="nombreMarca" value="<?php echo($marca->getnombreMarca()) ?>"> <?php echo($marca->getnombreMarca())?></td>
+                    <td><input type="submit" name="accion" id="editar" value="editar"></td>
+                    <td><input type="submit" name="accion" id="borrar" value="borrar"></td>
+                </tr>
+                <?php    
+                }// fin for 
+            } ?>
+            
+        
+    </table>
+  </form>
 </div>
 
 <?php
