@@ -14,9 +14,9 @@
         array_key_exists('precio',$param) and array_key_exists('idTipo',$param) and 
         array_key_exists('idMarca',$param) and array_key_exists('precio',$param) and array_key_exists('stock',$param)){
             $obj = new Reloj(); 
-            $objTipo=new Tipo();
+            $objTipo = new Tipo();
             $objTipo->setidTipo($param['idTipo']);
-            $objMarca=new Marca();
+            $objMarca = new Marca();
             $objMarca->setidMarca($param['idMarca']);
             $obj->setear($param["idReloj"],$param["nombreReloj"],$param["precio"],$param['stock'],$objTipo,$objMarca);
 
