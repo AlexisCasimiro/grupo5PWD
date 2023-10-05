@@ -32,8 +32,6 @@ $worksheet->getCell('B5')->getCalculatedValue()
 
 $write =PhpOffice\PhpSpreadsheet\IOFactory::createWriter($spreadsheet,"Xlsx");
 $write->save("grupo5.xlsx");
-//$inputFileName = './grupo5.xlsx';
 
-//echo "<h1>Hecho</h1>";
 
 ?>

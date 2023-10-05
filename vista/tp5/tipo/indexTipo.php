@@ -36,5 +36,6 @@ $listaTipo = $objAbmTipo->buscar(null);
 </div>
 
 <?php
+include_once("./crearHC.php");
 include_once("../../estructura/footer.php");
 ?>
