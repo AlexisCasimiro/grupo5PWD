@@ -46,6 +46,7 @@
         public function cargar(){
             $resp=false;
             $base=new BaseDatos();
+            $base->setBaseDatos("relojes");
             $sql="SELECT * FROM marca WHERE idMarca=".$this->getidMarca();  
             if($base->Iniciar()){
                 $res=$base->Ejecutar($sql);
@@ -69,6 +70,7 @@
         public function insertar(){
             $resp=false;
             $base=new BaseDatos();
+            $base->setBaseDatos("relojes");
             $sql="INSERT INTO marca (idMarca,nombreMarca) 
             VALUES (".$this->getidMarca()."','".$this->getnombreMarca()."')";
             if($base->Iniciar()){
@@ -93,6 +95,7 @@
         public function modificar(){
             $resp=false; 
             $base=new BaseDatos();
+            $base->setBaseDatos("relojes");
             $sql="UPDATE marca SET nombreMarca='".$this->getnombreMarca()."' WHERE idMarca=".$this->getidMarca();
             if($base->Iniciar()){
                 if($base->Ejecutar($sql)){
@@ -113,6 +116,7 @@
         public function eliminar(){
             $resp=false;
             $base=new BaseDatos();
+            $base->setBaseDatos("relojes");
             $sql="DELETE FROM marca WHERE idMarca=".$this->getidMarca()."";
             if($base->Iniciar()){
                 if($base->Ejecutar($sql)){
@@ -133,6 +137,7 @@
         public static function listar($parametro=""){
             $arreglo=array();
             $base=new BaseDatos();
+            $base->setBaseDatos("relojes");
             $sql="SELECT * FROM marca ";
             if($parametro!=""){
                 $sql.='WHERE '.$parametro;

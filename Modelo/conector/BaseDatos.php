@@ -46,6 +46,14 @@ class BaseDatos extends PDO {
         return $this->getConec();
         
     }
+
+    public function baseDatos(){
+        return $this->database;
+    }
+
+    public function setBaseDatos($nombre){
+        $this->database=$nombre;   
+    }
     
   
     

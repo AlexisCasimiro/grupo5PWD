@@ -55,6 +55,7 @@ class Tipo{
     public function cargar(){
         $resp=false; 
        $base=new BaseDatos();
+       $base->setBaseDatos("relojes");
        $sql="SELECT * FROM tipo WHERE idTipo='".$this->getidTipo()."'";
        if($base->Iniciar()){
         $res=$base->Ejecutar($sql);
@@ -84,6 +85,7 @@ class Tipo{
     public function insertar(){
         $resp=false;
         $base=new BaseDatos();
+        $base->setBaseDatos("relojes");
         $sql="INSERT INTO tipo(idTipo,nombreTipo) VALUES('".$this->getidTipo()."','".$this->getnombreTipo().");";
         if($base->Iniciar()){
             if($elid=$base->Ejecutar($sql)){
@@ -111,6 +113,7 @@ class Tipo{
     public function modificar(){
         $res=false;
         $base=new BaseDatos();
+        $base->setBaseDatos("relojes");
         $sql="UPDATE tipo SET nombreTipo='".$this->getnombreTipo()."' WHERE idTipo='".$this->getidTipo()."'";
         if($base->Iniciar()){
             if($base->Ejecutar($sql)){
@@ -136,6 +139,7 @@ class Tipo{
     public function eliminar(){
         $res=false; 
         $base=new BaseDatos();
+        $base->setBaseDatos("relojes");
         $sql="DELETE FROM tipo WHERE idTipo='".$this->getidTipo()."'";
         if($base->Iniciar()){
             if($base->Ejecutar($sql)){
@@ -159,6 +163,7 @@ class Tipo{
     public static function listar($parametro=""){
         $arreglo=array ();
         $base=new BaseDatos();
+        $base->setBaseDatos("relojes");
         
         $sql="SELECT * FROM tipo";
         if($parametro!=""){
