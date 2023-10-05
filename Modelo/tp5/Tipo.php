@@ -55,7 +55,7 @@ class Tipo{
     public function cargar(){
         $resp=false; 
        $base=new BaseDatos();
-       $sql="SELECT * FROM Tipo WHERE idTipo='".$this->getidTipo()."'";
+       $sql="SELECT * FROM tipo WHERE idTipo='".$this->getidTipo()."'";
        if($base->Iniciar()){
         $res=$base->Ejecutar($sql);
         if($res>-1){
@@ -84,7 +84,7 @@ class Tipo{
     public function insertar(){
         $resp=false;
         $base=new BaseDatos();
-        $sql="INSERT INTO Tipo(idTipo,nombreTipo) VALUES('".$this->getidTipo()."','".$this->getnombreTipo().");";
+        $sql="INSERT INTO tipo(idTipo,nombreTipo) VALUES('".$this->getidTipo()."','".$this->getnombreTipo().");";
         if($base->Iniciar()){
             if($elid=$base->Ejecutar($sql)){
                 $this->setidTipo($elid);// id 
@@ -111,7 +111,7 @@ class Tipo{
     public function modificar(){
         $res=false;
         $base=new BaseDatos();
-        $sql="UPDATE Tipo SET nombreTipo='".$this->getnombreTipo()."' WHERE idTipo='".$this->getidTipo()."'";
+        $sql="UPDATE tipo SET nombreTipo='".$this->getnombreTipo()."' WHERE idTipo='".$this->getidTipo()."'";
         if($base->Iniciar()){
             if($base->Ejecutar($sql)){
                 $res=true;
@@ -136,7 +136,7 @@ class Tipo{
     public function eliminar(){
         $res=false; 
         $base=new BaseDatos();
-        $sql="DELETE FROM Tipo WHERE idTipo='".$this->getidTipo()."'";
+        $sql="DELETE FROM tipo WHERE idTipo='".$this->getidTipo()."'";
         if($base->Iniciar()){
             if($base->Ejecutar($sql)){
                 $res=true;
@@ -160,7 +160,7 @@ class Tipo{
         $arreglo=array ();
         $base=new BaseDatos();
         
-        $sql="SELECT * FROM Tipo";
+        $sql="SELECT * FROM tipo";
         if($parametro!=""){
             $sql.=' WHERE '.$parametro;
             
@@ -170,7 +170,7 @@ class Tipo{
             if($res>0){
                 while($row=$base->Registro()){
                     $obj=new Tipo();
-                    $objPersona = new Persona();
+                    //$objPersona = new Persona();
                     $obj->setear($row["idTipo"],$row["nombreTipo"]);
                     array_push($arreglo,$obj); // carga el obj en el array 
                     

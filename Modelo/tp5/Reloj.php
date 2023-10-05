@@ -6,6 +6,7 @@ class Reloj{
     private $objTipo;
     private $objMarca;
     private $precio;
+    private $stock; 
     private $mensaje; 
 
     // Constructor
@@ -13,18 +14,20 @@ class Reloj{
     {
         $this->idReloj="";
         $this->nombreReloj="";
+        $this->stock=0;
         $this->objTipo = new Tipo();
         $this->objMarca = new Marca();
         $this->precio = 0;
         
     }//  fin cinstructor
 
-    public function setear($idReloj,$nombreReloj,$objTipo,$objMarca,$precio){
+    public function setear($idReloj,$nombreReloj,$precio,$stock,$objTipo,$objMarca){
         $this->setidReloj($idReloj);
         $this->setnombreReloj($nombreReloj);
         $this->setobjTipo($objTipo);
         $this->setobjMarca($objMarca);
         $this->setprecio($precio);
+        $this->setstock($stock);
     }// fin function 
 
     //  METODO GET
@@ -45,6 +48,9 @@ class Reloj{
 
     public function getprecio(){
         return $this->precio; 
+    }
+    public function getstock(){
+        return $this->stock; 
     }
     public function getMensaje(){
         return $this->mensaje;
@@ -71,6 +77,9 @@ class Reloj{
     public function setprecio($p){
         $this->precio=$p;
     }
+    public function setstock($cant){
+        $this->stock=$cant;
+    }
     public function setMensaje($mensaje){
         $this->mensaje=$mensaje;
     }// fin 
@@ -85,7 +94,7 @@ class Reloj{
     public function cargar(){
         $resp=false; 
        $base=new BaseDatos();
-       $sql="SELECT * FROM Reloj WHERE idReloj='".$this->getidReloj()."'";
+       $sql="SELECT * FROM reloj WHERE idReloj='".$this->getidReloj()."'";
        if($base->Iniciar()){
         $res=$base->Ejecutar($sql);
         if($res>-1){
@@ -97,7 +106,8 @@ class Reloj{
                 $objMarca=new Marca(); // creo al obj
                 $objMarca->setidMarca($row['idMarca']); // seteo su id 
                 $objMarca->cargar(); 
-                $this->setear($row["idReloj"],$row["nombreReloj"],$objTipo,$objMarca,$row["precio"]);
+                // setear($idReloj,$nombreReloj,$precio,$stock,$objTipo,$objMarca)
+                $this->setear($row["idReloj"],$row["nombreReloj"],$row["precio"],$row["stock"],$objTipo,$objMarca);
                 $resp=true; 
             }// fin if 
         }// fin if
@@ -120,8 +130,8 @@ class Reloj{
     public function insertar(){
         $resp=false;
         $base=new BaseDatos();
-        $sql="INSERT INTO Reloj(idReloj,nombreReloj,idTipo,idMarca,precio) VALUES('".$this->getidReloj()."','".$this->getnombreReloj()."',
-        '".$this->getobjTipo()->getidTipo()."',".$this->getobjMarca()->getidMarca()."',".$this->getprecio().");";
+        $sql="INSERT INTO Reloj(idReloj,nombreReloj,precio,stock,idTipo,idMarca) VALUES('".$this->getidReloj()."','".$this->getnombreReloj()."',
+        '".$this->getprecio()."','".$this->getstock()."','".$this->getobjTipo()->getidTipo()."',".$this->getobjMarca()->getidMarca()."',".$this->getprecio().");";
         if($base->Iniciar()){
             if($elid=$base->Ejecutar($sql)){
                 $this->setidReloj($elid);// id 
@@ -148,7 +158,10 @@ class Reloj{
     public function modificar(){
         $res=false;
         $base=new BaseDatos();
-        $sql="UPDATE Reloj SET nombreReloj='".$this->getnombreReloj()."', objTipo='".$this->getobjTipo()->getidTipo()."', idMarca='".$this->getobjMarca()->getidMarca()."', precio='".$this->getprecio()."' WHERE idReloj='".$this->getidReloj()."'";
+        $sql="UPDATE reloj SET nombreReloj='".$this->getnombreReloj()."', precio='".$this->getprecio()."', stock='".$this->getstock()."'
+        , objTipo='".$this->getobjTipo()->getidTipo()."'
+        , idMarca='".$this->getobjMarca()->getidMarca()."',
+         precio='".$this->getprecio()."' WHERE idReloj='".$this->getidReloj()."'";
         if($base->Iniciar()){
             if($base->Ejecutar($sql)){
                 $res=true;
@@ -173,7 +186,7 @@ class Reloj{
     public function eliminar(){
         $res=false; 
         $base=new BaseDatos();
-        $sql="DELETE FROM Reloj WHERE idReloj='".$this->getidReloj()."'";
+        $sql="DELETE FROM reloj WHERE idReloj='".$this->getidReloj()."'";
         if($base->Iniciar()){
             if($base->Ejecutar($sql)){
                 $res=true;
@@ -197,7 +210,7 @@ class Reloj{
         $arreglo=array ();
         $base=new BaseDatos();
         
-        $sql="SELECT * FROM Reloj";
+        $sql="SELECT * FROM reloj";
         if($parametro!=""){
             $sql.=' WHERE '.$parametro;
             
@@ -213,8 +226,8 @@ class Reloj{
                     $objMarca = new Marca();
                     $objMarca->setidMarca($row["idMarca"]);
                     $objMarca->cargar();
-                    
-                    $obj->setear($row["idReloj"],$row["nombreReloj"],$objTipo,$objMarca,$row["precio"]);
+                    // setear($idReloj,$nombreReloj,$precio,$stock,$objTipo,$objMarca)
+                    $obj->setear($row["idReloj"],$row["nombreReloj"],$row["precio"],$row["stock"],$objTipo,$objMarca);
                     array_push($arreglo,$obj); // carga el obj en el array 
                     
                 }
