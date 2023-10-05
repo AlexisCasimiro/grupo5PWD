@@ -3,13 +3,13 @@
 require '../../vendor/autoload.php';
 
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
-use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+use PhpOffice\PhpSpreadsheet\IOFactory;
 
 $spreadsheet = new Spreadsheet(); // crea un obj spreadsheet 
 $worksheet = $spreadsheet->getActiveSheet(); // llama al metodo para activar el obj
 $worksheet
 ->setCellValue('A1','Tax Rate')
-->setCellValue('B1','=19%')  // un forma de escribir un % en una celda 
+->setCellValue('B1','=85%')  // un forma de escribir un % en una celda 
 ->setCellValue('A3','Net price')
 ->setCellValue('B3',12.99)
 ->setCellValue('A4','Tax')
@@ -30,8 +30,9 @@ $worksheet->getCell('B4')->getCalculatedValue(),
 $worksheet->getCell('B5')->getCalculatedValue()
 ), PHP_EOL;
 
-
-$inputFileName = './grupo5.xlsx';
+$write =PhpOffice\PhpSpreadsheet\IOFactory::createWriter($spreadsheet,"Xlsx");
+$write->save("grupo5.xlsx");
+//$inputFileName = './grupo5.xlsx';
 
 //echo "<h1>Hecho</h1>";
 
