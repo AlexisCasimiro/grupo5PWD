@@ -1,5 +1,5 @@
 <?php
-
+/** 
 //upload.php
 
 include '../../vendor/autoload.php';
@@ -30,5 +30,58 @@ else
 }
 
 echo $message;
+*/
+
+// codigo para convertir una tabla html en un excel, usando la libreria 
+include_once '../../vendor/autoload.php';
+use PhpOffice\PhpSpreadsheet\IOFactory;
+
+$datos =data_submitted(); 
+
+if(isset($datos['file_content'])){
+    $archivoTemporario= './tmp_html/' .time() .'.html';
+    file_put_contents($archivoTemporario,$datos['file_content']);
+    $reader=IOFactory::createReader('Html');
+    $spreadsheet=$reader->load($archivoTemporario);
+    $writer=IOFactory::createWriter($spreadsheet,'Xlsx');
+    $nombreArchivo=time() . 'xlsx';
+    $writer->save($nombreArchivo);
+    header('Content-Type: application/x-www-form-urlencoded');
+    header('Content-Transfer-Encoding:Binary');
+    header("Content-disposition:attachment; filename=\"".$nombreArchivo."\"");
+    readfile($nombreArchivo);
+    unlink($archivoTemporario);
+    unlink($nombreArchivo);
+    exit;
+}// fin if 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ?>

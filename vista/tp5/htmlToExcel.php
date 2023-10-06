@@ -1,4 +1,4 @@
-
+<!--
 <!DOCTYPE html>
 <html>
    <head>
@@ -52,4 +52,58 @@ $(document).ready(function(){
 });
 </script>
 
+-->
+<?php
+  // EJEMPLO PARA CONVERTIR UNA TABLA HTML EN UN ARCHIVO EXCEL
+include_once '../../configuracion.php';
 
+$objReloj =new AbmReloj();
+$listaRelojes=$objReloj->buscar(null);
+//var_dump($listaRelojes); 
+?>
+
+<!-- CODIGO HTML PARA HACER LA TABLA -->
+<section>
+  <div class="container">
+    <h2>Lista de relojes </h2>
+    <form action="uploadExcel.php" method="post">
+      <table class="table" id="table_content">
+        <tr>
+          <th>Nombre</th>
+          <th>Precio</th>
+          <th>Stock</th>
+          <th>ID_Tipo</th>
+          <th>ID_Marca</th>
+        </tr>
+        <?php
+        foreach($listaRelojes as $reloj){
+          echo('<td>'.$reloj->getnombreReloj().'</td>');
+          
+        }
+        ?>
+          <td><?php $reloj->getnombreReloj() ?></td>
+          <td><?php  $reloj->getprecio() ?></td>
+          <td><?php $reloj->getstock() ?></td>
+          <td><?php $reloj->getobjTipo()->getnombreTipo() ?></td>
+          <td><?php $reloj->getobjMarca()->getnombreMarca() ?></td>
+      
+      </table>
+      <input type="hidden" name="file_content" id="file_content">
+      <button type="submit" name="convertit" id="convertir"> Convertir a Excel</button>
+    </form>
+  </div>
+  <script src="../libs/node_modules/jquery/dist/jquery.min.js"></script>
+</section>
+
+<script>
+  $(document).ready(function(){
+    $("#convertir").click(function(){
+      var tabla = '<table>';
+      tabla += $('#table_content').html();
+      tabla+='</table>';
+
+      $("#file_content").val(tabla);
+      $("#convertir").submit(); 
+    })
+  });
+</script>
