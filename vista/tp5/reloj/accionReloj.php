@@ -25,7 +25,7 @@
             }// fin if 
 
         }// fin if
-        if($reps){
+        if($resp){
             $mensaje="La accion ".$datos['accion']."  se realizao correctamente " ;
         }
         else{

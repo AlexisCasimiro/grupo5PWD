@@ -25,17 +25,17 @@ $listaTipo = $objAbmTipo->buscar(null);
                     <td><input type="hidden" name="nombreTipo" value="<?php echo($tipo->getnombretipo()) ?>"> <?php echo($tipo->getnombretipo())?></td>
                     <td><input type="submit" name="accion" id="editar" value="editar"></td>
                     <td><input type="submit" name="accion" id="borrar" value="borrar"></td>
-                </tr>
+                    </tr>
                 <?php    
                 }// fin for 
             } ?>
-            
-        
     </table>
+  </form>
+  <form action="crearHC.php" method="post">
+            <input type="submit" name="accion" id="genHC" value="Generar Excel">
   </form>
 </div>
 
 <?php
-include_once("./crearHC.php");
 include_once("../../estructura/footer.php");
 ?>
