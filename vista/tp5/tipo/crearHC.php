@@ -13,8 +13,12 @@ $objAbmTipo = new AbmTipo();
 $listaTipo = $objAbmTipo->buscar(null);
 
 $spreadsheet = new Spreadsheet(); // crea un obj spreadsheet 
-$activeWorksheet = $spreadsheet->getActiveSheet();
+//$activeWorksheet = $spreadsheet->getActiveSheet();
+$myWorkSheet = new PhpOffice\PhpSpreadsheet\Worksheet\Worksheet($spreadsheet, 'Tipos');
 
+// Attach the "My Data" worksheet as the first worksheet in the Spreadsheet object
+$spreadsheet->addSheet($myWorkSheet, 0);
+$activeWorksheet = $spreadsheet->setActiveSheetIndexByName('Tipos');
 
 /**
  * Encabezado de la hoja de calculo
@@ -69,25 +73,34 @@ function writeHC($spreadsheet){
 }
 
 
-
-echo "<h1>Andubo</h1>";
-$arreglo_celdas = array();
-$celda_letra = 65; //chr(65) A
-$celda_numero = 2; //chr(50) 2
-foreach ($listaTipo as $key => $value) {
-    $celda = chr($celda_letra).$celda_numero;
-    $celdaSig = chr($celda_letra+1).$celda_numero;
-    $datos_id = $value->getidTipo();
-    $datos_nombre = $value->getnombreTipo();
-
-    $arreglo_celdas[$celda] = $datos_id;
-    $arreglo_celdas[$celdaSig] = $datos_nombre;
-    $celda_numero++;
+/**
+ * forma el arreglo entremexclando los datos de los objetos
+ * y los nombres de las celdas de excel para hacer la hoja de calculo
+ * @param $lista
+ * 
+ * @return array
+ */
+function formarArreglo($lista){
+    $arreglo_celdas = array();
+    $celda_letra = 65; //chr(65) A
+    $celda_numero = 2; //chr(50) 2
+    foreach ($lista as $key1 => $obj) {
+        $arregloDatoObjeto = $obj->getDatos();
+        foreach ($arregloDatoObjeto as $key => $datObj) {
+            $celda = chr($celda_letra + $key).$celda_numero + $key1;
+            $arreglo_celdas[$celda] = $datObj;       
+        }
+    }
+    return $arreglo_celdas;
 }
+
 
 $arreglo_titulos = ["ID", "Tipo"];
 
+$arreglo_celdas = formarArreglo($listaTipo);
 $activeWorksheet = headHC($arreglo_titulos, $activeWorksheet);
 $activeWorksheet = bodyHC($arreglo_celdas, $activeWorksheet);
 writeHC($spreadsheet);
+
 echo "<h3>Hecho</h3>";
+

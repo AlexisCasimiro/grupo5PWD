@@ -22,30 +22,34 @@ class Tipo{
     public function getidTipo(){
         return $this->idTipo; 
     }
-
     public function getnombreTipo(){
         return $this->nombreTipo; 
     }
-
     public function getMensaje(){
         return $this->mensaje;
     }// fin mensaje
-
 
     //  METODO SET
     public function setidTipo($p){
         $this->idTipo=$p;
     }
-
     public function setnombreTipo($nombreTipo){
         $this->nombreTipo=$nombreTipo;
     }
-
     public function setMensaje($mensaje){
         $this->mensaje=$mensaje;
     }// fin 
 
-
+    /**
+     * retorna un arreglo con los atributos del objeto
+     * @return array
+     */
+    public function getDatos(){
+        $ID = $this->getidTipo();
+        $nom = $this->getnombreTipo();
+        $array = ["$ID","$nom"];
+        return $array;
+    }
     
 
     // METODO CARGAR

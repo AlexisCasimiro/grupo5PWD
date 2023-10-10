@@ -83,7 +83,20 @@ class Reloj{
     public function setMensaje($mensaje){
         $this->mensaje=$mensaje;
     }// fin 
+   /**
+     * retorna un arreglo con los atributos del objeto
+     * @return array
+     */
+    public function getDatos(){
+        $ID = $this->getidReloj();
+        $nom = $this->getnombreReloj();
+        $tip = $this->getobjTipo()->getnombreTipo();
+        $mar = $this->getobjMarca()->getnombreMarca();
+        $pre = $this->getprecio();
+        $array = ["$ID","$nom","$tip","$mar","$pre"];
 
+        return $array;
+    }
 
     
 

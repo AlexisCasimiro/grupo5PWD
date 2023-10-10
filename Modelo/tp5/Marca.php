@@ -41,6 +41,17 @@
         public function setMensaje($msj){
             $this->mensaje=$msj;
         }
+   /**
+     * retorna un arreglo con los atributos del objeto
+     * @return array
+     */
+    public function getDatos(){
+        $ID = $this->getidMarca();
+        $nom = $this->getnombreMarca();
+        $array = ["$ID","$nom"];
+        return $array;
+    }
+
 
         // METODO CARGAR
         public function cargar(){
