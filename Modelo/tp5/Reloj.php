@@ -6,7 +6,6 @@ class Reloj{
     private $objTipo;
     private $objMarca;
     private $precio;
-    private $stock; 
     private $mensaje; 
 
     // Constructor
@@ -14,20 +13,18 @@ class Reloj{
     {
         $this->idReloj="";
         $this->nombreReloj="";
-        $this->stock=0;
         $this->objTipo = new Tipo();
         $this->objMarca = new Marca();
         $this->precio = 0;
         
     }//  fin cinstructor
 
-    public function setear($idReloj,$nombreReloj,$precio,$stock,$objTipo,$objMarca){
+    public function setear($idReloj,$nombreReloj,$precio,$objTipo,$objMarca){
         $this->setidReloj($idReloj);
         $this->setnombreReloj($nombreReloj);
         $this->setobjTipo($objTipo);
         $this->setobjMarca($objMarca);
         $this->setprecio($precio);
-        $this->setstock($stock);
     }// fin function 
 
     //  METODO GET
@@ -48,9 +45,6 @@ class Reloj{
 
     public function getprecio(){
         return $this->precio; 
-    }
-    public function getstock(){
-        return $this->stock; 
     }
     public function getMensaje(){
         return $this->mensaje;
@@ -76,9 +70,6 @@ class Reloj{
 
     public function setprecio($p){
         $this->precio=$p;
-    }
-    public function setstock($cant){
-        $this->stock=$cant;
     }
     public function setMensaje($mensaje){
         $this->mensaje=$mensaje;
@@ -119,8 +110,8 @@ class Reloj{
                 $objMarca=new Marca(); // creo al obj
                 $objMarca->setidMarca($row['idMarca']); // seteo su id 
                 $objMarca->cargar(); 
-                // setear($idReloj,$nombreReloj,$precio,$stock,$objTipo,$objMarca)
-                $this->setear($row["idReloj"],$row["nombreReloj"],$row["precio"],$row["stock"],$objTipo,$objMarca);
+                // setear($idReloj,$nombreReloj,$precio,$objTipo,$objMarca)
+                $this->setear($row["idReloj"],$row["nombreReloj"],$row["precio"],$objTipo,$objMarca);
                 $resp=true; 
             }// fin if 
         }// fin if
@@ -143,8 +134,8 @@ class Reloj{
     public function insertar(){
         $resp=false;
         $base=new BaseDatos("relojes");
-        $sql="INSERT INTO Reloj(idReloj,nombreReloj,precio,stock,idTipo,idMarca) VALUES('".$this->getidReloj()."','".$this->getnombreReloj()."',
-        '".$this->getprecio()."','".$this->getstock()."','".$this->getobjTipo()->getidTipo()."',".$this->getobjMarca()->getidMarca()."',".$this->getprecio().");";
+        $sql="INSERT INTO Reloj(idReloj,nombreReloj,precio,idTipo,idMarca) VALUES('".$this->getidReloj()."','".$this->getnombreReloj()."',
+        '".$this->getprecio()."','".$this->getobjTipo()->getidTipo()."',".$this->getobjMarca()->getidMarca()."',".$this->getprecio().");";
         if($base->Iniciar()){
             if($elid=$base->Ejecutar($sql)){
                 $this->setidReloj($elid);// id 
@@ -171,7 +162,7 @@ class Reloj{
     public function modificar(){
         $res=false;
         $base=new BaseDatos("relojes");
-        $sql="UPDATE reloj SET nombreReloj='".$this->getnombreReloj()."', precio='".$this->getprecio()."', stock='".$this->getstock()."'
+        $sql="UPDATE reloj SET nombreReloj='".$this->getnombreReloj()."', precio='".$this->getprecio()."'
         , objTipo='".$this->getobjTipo()->getidTipo()."'
         , idMarca='".$this->getobjMarca()->getidMarca()."',
          precio='".$this->getprecio()."' WHERE idReloj='".$this->getidReloj()."'";
@@ -239,8 +230,8 @@ class Reloj{
                     $objMarca = new Marca();
                     $objMarca->setidMarca($row["idMarca"]);
                     $objMarca->cargar();
-                    // setear($idReloj,$nombreReloj,$precio,$stock,$objTipo,$objMarca)
-                    $obj->setear($row["idReloj"],$row["nombreReloj"],$row["precio"],$row["stock"],$objTipo,$objMarca);
+                    // setear($idReloj,$nombreReloj,$precio,$objTipo,$objMarca)
+                    $obj->setear($row["idReloj"],$row["nombreReloj"],$row["precio"],$objTipo,$objMarca);
                     array_push($arreglo,$obj); // carga el obj en el array 
                     
                 }

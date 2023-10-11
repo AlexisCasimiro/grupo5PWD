@@ -1,10 +1,11 @@
 <?php
 
-require '../../../vendor/autoload.php';
-include_once '../../../configuracion.php';
+require '../../vendor/autoload.php';
+include_once '../../configuracion.php';
 
+//use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use phpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\IOFactory;
-use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use Phpoffice\Phpspreadsheet\Worksheet\Worksheet;
 //use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 

@@ -54,7 +54,6 @@ CREATE TABLE `reloj` (
   `idReloj` int(11) NOT NULL,
   `nombreReloj` varchar(255) NOT NULL,
   `precio` double(7,2) NOT NULL,
-  `stock` int(11) NOT NULL,
   `idTipo` int(11) NOT NULL,
   `idMarca` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -63,13 +62,13 @@ CREATE TABLE `reloj` (
 -- Volcado de datos para la tabla `reloj`
 --
 
-INSERT INTO `reloj` (`idReloj`, `nombreReloj`, `precio`, `stock`, `idTipo`, `idMarca`) VALUES
-(1, 'apple Watch', 20150.00, 5, 4, 3),
-(2, 'omega', 18360.00, 7, 2, 6),
-(3, 'garmin', 35820.85, 3, 5, 1),
-(4, 'fossil', 20780.80, 9, 6, 5),
-(5, 'tag', 9320.12, 10, 1, 4),
-(6, 'patek', 44780.35, 12, 5, 2);
+INSERT INTO `reloj` (`idReloj`, `nombreReloj`, `precio`, `idTipo`, `idMarca`) VALUES
+(1, 'apple Watch', 20150.00, 4, 3),
+(2, 'omega', 18360.00, 2, 6),
+(3, 'garmin', 35820.85, 5, 1),
+(4, 'fossil', 20780.80, 6, 5),
+(5, 'tag', 9320.12, 1, 4),
+(6, 'patek', 44780.35, 5, 2);
 
 -- --------------------------------------------------------
 
