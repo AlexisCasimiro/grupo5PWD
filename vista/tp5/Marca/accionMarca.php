@@ -1,10 +1,13 @@
 <?php
     include_once '../../../configuracion.php';
     include_once '../../estructura/headerAccion.php';
+    $hoja = "Marcas";
+    include '../crearHC.php';
 
     $datos =data_submitted();
     $resp=false; 
     $objMarca=new AbmMarca();
+    $listaObj = $objMarca->buscar(null);
 
     if(isset($datos['accion'])){
         if(($datos['accion']=='editar')){
@@ -15,16 +18,25 @@
         if($datos['accion']=='borrar'){
             if($objMarca->baja($datos)){
                 $resp=true; 
-
             }// fin if 
-
         }// fin if 
         if($datos['accion']=='nuevo'){
             if($objMarca->alta($datos)){
                 $resp=true;
             }// fin if 
-
         }// fin if
+        if($datos['accion']=='creaHC'){
+            $arreglo_titulos = ["ID", "Marca"];
+            $arreglo_celdas = formarArreglo($listaObj);
+            $activeWorksheet = headHC($arreglo_titulos, $activeWorksheet);
+            $activeWorksheet = bodyHC($arreglo_celdas, $activeWorksheet);
+            writeHC($spreadsheet);
+            $resp=true;
+            echo "<h3>Hecho</h3>";
+            echo "<a href='grupo5.xlsx'>grupo5</a>";          
+        }
+
+
         if($resp){
             $mensaje="La accion ".$datos['accion']."  se realizao correctamente " ;
         }

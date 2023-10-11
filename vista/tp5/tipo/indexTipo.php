@@ -31,8 +31,8 @@ $listaTipo = $objAbmTipo->buscar(null);
             } ?>
     </table>
   </form>
-  <form action="crearHC.php" method="post">
-            <input type="submit" name="accion" id="genHC" value="Generar Excel">
+  <form action="accionTipo.php" method="post">
+            <input type="submit" name="accion" id="creaHC" value="creaHC">
   </form>
 </div>
 

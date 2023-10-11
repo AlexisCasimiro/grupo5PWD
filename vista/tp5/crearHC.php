@@ -1,25 +1,21 @@
 <?php
 
-require '../../vendor/autoload.php';
-include_once '../../configuracion.php';
+require '../../../vendor/autoload.php';
+include_once '../../../configuracion.php';
+//$hoja = "Tipos";
 
-//use PhpOffice\PhpSpreadsheet\Spreadsheet;
-use phpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\IOFactory;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use Phpoffice\Phpspreadsheet\Worksheet\Worksheet;
 //use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
-$objAbmTipo = new AbmTipo();
-
-$listaTipo = $objAbmTipo->buscar(null);
-
 $spreadsheet = new Spreadsheet(); // crea un obj spreadsheet 
 //$activeWorksheet = $spreadsheet->getActiveSheet();
-$myWorkSheet = new PhpOffice\PhpSpreadsheet\Worksheet\Worksheet($spreadsheet, 'Tipos');
+$myWorkSheet = new PhpOffice\PhpSpreadsheet\Worksheet\Worksheet($spreadsheet, $hoja);
 
 // Attach the "My Data" worksheet as the first worksheet in the Spreadsheet object
 $spreadsheet->addSheet($myWorkSheet, 0);
-$activeWorksheet = $spreadsheet->setActiveSheetIndexByName('Tipos');
+$activeWorksheet = $spreadsheet->setActiveSheetIndexByName($hoja);
 
 /**
  * Encabezado de la hoja de calculo
@@ -95,7 +91,7 @@ function formarArreglo($lista){
     return $arreglo_celdas;
 }
 
-
+/*
 $arreglo_titulos = ["ID", "Tipo"];
 
 $arreglo_celdas = formarArreglo($listaTipo);
@@ -104,4 +100,5 @@ $activeWorksheet = bodyHC($arreglo_celdas, $activeWorksheet);
 writeHC($spreadsheet);
 
 echo "<h3>Hecho</h3>";
-
+echo "<a href='grupo5.xlsx'>grupo5</a>";
+*/

@@ -29,9 +29,10 @@ $listaMarca = $objAbmMarca->buscar(null);
                 <?php    
                 }// fin for 
             } ?>
-            
-        
     </table>
+  </form>
+  <form action="accionMarca.php" method="post">
+            <input type="submit" name="accion" id="creaHC" value="creaHC">
   </form>
 </div>
 
